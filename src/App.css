@@ -226,7 +226,46 @@ label {
 
 aside {
   margin-left: 10px;
-  margin-top: 80px;
-  float: right;
+  float: left;
   margin-right: 10px;
+}
+.asside-text {
+  margin-left: 10px;
+  margin-top: 100px;
+  padding-top: 100px;
+  font-family: "Merienda";
+  font-size: larger;
+  font-weight: 700;
+  word-spacing: 1px;
+
+  text-justify: auto;
+  text-align: center;
+  margin-right: 10px;
+}
+.get-started {
+  padding: 8px 12px;
+  font-size: larger;
+  background-color: #414f62;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(8, 82, 134, 0.523),
+    transparent
+  );
+  color: #f7f6f6;
+  font-weight: bold;
+
+  border-width: 1.8px;
+  border: #0b0909;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.get-started:hover {
+  background: #7387a3;
+  color: white;
+  border: none;
+  box-shadow: 0 0 5px #7387a3, 0 0 25px #7387a3, 0 0 50px #7387a3,
+    0 0 200px #7387a3;
 }
