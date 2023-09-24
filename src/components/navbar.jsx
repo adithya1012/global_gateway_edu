@@ -6,7 +6,7 @@ class Navbar extends Component {
         <header id="header">
           <div class="searchBar">
             <div class="column-one">
-              <img src="../images/logo.png" width="70px" height="70px" />
+              <img src="../images/logo5.png" width="105px" height="50px" />
             </div>
             <div class="column-two">
               <form onsubmit="event.preventDefault();" role="search">
@@ -35,6 +35,12 @@ class Navbar extends Component {
             <span class="line"></span>
           </nav>
         </header>
+        <br />
+        <div>
+          <aside>
+            <img src="../images/home_page_image.jpg" width="350" height="400" />
+          </aside>
+        </div>
       </div>
     );
   }
