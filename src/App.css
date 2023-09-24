@@ -1,101 +1,227 @@
-searchBar{
-  background-color:  rgb(40, 40, 41);
-  font: 400;
-  color: aliceblue;
+@import url("https://fonts.googleapis.com/css?family=Inconsolata|Lato:300,400,700");
+
+.content {
+  background-color: #fff;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #666;
+  font-size: 1em;
+  line-height: 1.8em;
+  margin: 20px auto;
+  margin-top: 80px;
+  padding: 20px;
   width: 100%;
-  height: 90px;
-
+  max-width: 800px;
 }
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size:xx-large;
-  font-family:Papyrus;
-  font-weight: bold;
-}
-header{
-  margin:0; 
-}
-h1{
-  text-align: center;
-  font-family:"Lucida Handwriting";
-}
-p{
-  text-align: center;
-  font-family: "Papyrus";
-  font-weight: bold;
-}
-nav{
-  background-color: rgb(58, 56, 56);
-  font: 300;
-  color: aliceblue;
-
-}
-ul {
-  list-style-type: none;
-  margin: 0;
+.content ul {
+  margin: 0.5em 2em;
   padding: 0;
-  overflow: hidden;
-  background-color: rgb(15, 14, 14);
-  position: fixed;
-  top: 100;
-  width: 100%;
-
 }
 
-li {
-  float: left;
-}
+/* Appearance */
+.links {
+  background-color: rgba(7, 38, 52, 0.916);
 
-li a {
-  display: block;
-  color: white;
+  background-image: linear-gradient(to bottom, rgb(74, 81, 86), transparent);
+
+  border-bottom: 1px solid #0003;
+  box-shadow: 0 0 32px #0003;
+  font-size: 1em;
+  font-weight: 300;
+  --items: 4;
+}
+.links > a {
+  color: #9ab;
+  padding: 0.75em;
   text-align: center;
-  padding: 7px 8px;
   text-decoration: none;
-  font-size: small;
+  transition: all 0.5s;
+}
+.links > a:hover {
+  background: #ffffff06;
+  color: #adf;
+}
+.links > .line {
+  background: rgb(136, 181, 226);
+  height: 2px;
+  pointer-events: none;
 }
 
-li a:hover {
-  background-color: #130101;
+/* The Magic */
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.links {
+  display: grid;
+  grid-template-columns: repeat(var(--items), 1fr);
+  position: relative;
+}
+.links > .line {
+  opacity: 0;
+  transition: all 0.3s;
+  position: absolute;
+  bottom: 0;
+  left: var(--left, calc(100% / var(--items) * (var(--index) - 1)));
+  width: var(--width, calc(100% / var(--items)));
+  --index: 0;
+}
+.links > a:hover ~ .line {
+  opacity: 5;
 }
 
+.links > a:nth-of-type(1):hover ~ .line {
+  --index: 1;
+}
+.links > a:nth-of-type(2):hover ~ .line {
+  --index: 2;
+}
+.links > a:nth-of-type(3):hover ~ .line {
+  --index: 3;
+}
+.links > a:nth-of-type(4):hover ~ .line {
+  --index: 4;
+}
+.links > a:nth-of-type(5):hover ~ .line {
+  --index: 5;
+}
+.links > a:nth-of-type(6):hover ~ .line {
+  --index: 6;
+}
+.links > a:nth-of-type(7):hover ~ .line {
+  --index: 7;
+}
+.links > a:nth-of-type(8):hover ~ .line {
+  --index: 8;
+}
+.links > a:nth-of-type(9):hover ~ .line {
+  --index: 9;
+}
+.links > a:nth-of-type(10):hover ~ .line {
+  --index: 10;
+}
+.links > a:last-of-type:hover ~ .line {
+  --index: var(--items);
+}
+.searchBar {
+  background-color: rgb(5, 23, 38);
 
-input[type=text], select, textarea {
+  border-bottom: 1px solid #0003;
+  box-shadow: 0 0 32px #0003;
+  font-size: 1em;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+}
+
+:root {
+  --rad: 0.7rem;
+  --dur: 0.3s;
+  --color-dark: #2f2f2f;
+  --color-light: #fff;
+  --color-brand: #57bd84;
+  --font-fam: "Lato", sans-serif;
+  --height: 1.5rem;
+  --btn-width: 4rem;
+  --bez: cubic-bezier(0, 0, 0.43, 1.49);
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+form {
+  position: relative;
+  width: 30rem;
+  background: var(--color-brand);
+  border-radius: var(--rad);
+}
+input,
+.goButton {
+  height: var(--height);
+  font-family: var(--font-fam);
+  border: 0;
+  color: var(--color-dark);
+  font-size: 1rem;
+}
+input[type="search"] {
   width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  resize: vertical;
-  margin-left: 120px;
-  
+  background: var(--color-light);
+  padding: 0 1.6rem;
+  height: 25px;
+  border-radius: var(--rad);
+  appearance: none;
+  transition-property: width, border-radius;
+  z-index: 1;
+  position: relative;
 }
-
+.goButton {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: var(--btn-width);
+  font-weight: bold;
+  background: var(--color-brand);
+  border-radius: 0 var(--rad) var(--rad) 0;
+}
+input:not(:placeholder-shown) {
+  border-radius: var(--rad) 0 0 var(--rad);
+  width: calc(100% - var(--btn-width));
+  + button {
+    display: block;
+  }
+}
 label {
-  padding: 12px 12px 12px 0;
-  display: inline-block;
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+.column-one {
+  display: flex;
+  flex: 1;
+  justify-content: left;
+  margin-left: 10px;
+  margin-top: 2px;
+  margin-bottom: 4px;
+}
+.column-two {
+  display: flex;
+  flex: 2;
+  justify-content: center;
 }
 
-input[type=submit] {
-  background-color: #04AA6D;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
+.column-three {
+  display: flex;
+  justify-content: right;
+  flex: 3;
+  margin-right: 60px;
+}
+
+.login {
+  padding: 5px 10px;
+  background-color: #cf6766;
+  color: #0b0909;
+  font-weight: bold;
+  border-color: #0e0e0e;
+  border-width: 1.5px;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: 0.5s;
   cursor: pointer;
-  float: left;
-  margin-left: 120px;
 }
 
-input[type=submit]:hover {
-  background-color: #45a049;
+.login:hover {
+  background: #cf6766;
+  color: white;
+  border: none;
+  box-shadow: 0 0 5px #cf6766, 0 0 25px #cf6766, 0 0 50px #cf6766,
+    0 0 200px #cf6766;
 }
-aside{
-margin-left: 10px;
-margin-top: 80px;
-float: right;
-margin-right: 10px;
-}
-
