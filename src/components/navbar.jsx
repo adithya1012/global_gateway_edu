@@ -35,29 +35,6 @@ class Navbar extends Component {
             <span class="line"></span>
           </nav>
         </header>
-        <body>
-          <aside>
-            <img src="../images/home_page_image.jpg" width="350" height="400" />
-          </aside>
-          <p className="asside-text">
-            <em>
-              "Studying abroad is like opening a book to pages you've never
-              imagined, with each chapter filled with adventure, knowledge, and
-              personal growth."
-            </em>
-            <br />
-            <br />
-            <br />
-            Empowering Minds, Bridging Worlds: <br />
-            Your Global Education Journey Begins Here.
-            <br />
-            <br />
-            <button className="get-started">
-              GET STARTED
-              <img src="../images/arrow.png" width="17" height="17"></img>
-            </button>
-          </p>
-        </body>
       </div>
     );
   }
