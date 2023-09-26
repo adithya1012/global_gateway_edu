@@ -40,7 +40,7 @@
   color: rgb(255, 255, 255);
 }
 .links > .line {
-  background: rgb(97, 143, 188);
+  background: rgb(15, 108, 117);
   height: 2px;
   pointer-events: none;
 }
@@ -210,11 +210,11 @@ label {
 }
 
 .login:hover {
-  background: #e36161;
-  color: white;
+  background: #ffd500e5;
+  color: rgb(11, 10, 10);
   border: none;
-  box-shadow: 0 0 10px #e36161, 0 0 15px #e36161, 0 0 15px #e36161,
-    0 0 15px #e36161;
+  box-shadow: 0 0 7px #ffd500e5, 0 0 7px #ffd500e5, 0 0 7px #ffd500e5,
+    0 0 7px #ffd500e5;
 }
 
 aside {
@@ -237,19 +237,21 @@ aside {
 .get-started {
   padding: 8px 12px;
   font-size: large;
-  color: #cf6766;
+  color: #1f1b09e5;
   font-weight: bold;
   border: 3px solid;
   border-radius: 20px;
   overflow: hidden;
   transition: 0.5s;
   cursor: pointer;
-  background-color: #fff;
+  border-color: #ffd500e5;
+  background-color: #ffd500e5;
 }
 
 .get-started:hover {
-  background: #e8eaec;
-  color: cf6766;
+  background: #feed029a;
+  color: #060606;
   border: none;
-  box-shadow: 0 0 5px #cf6766, 0 0 2px #cf6766, 0 0 2px #cf6766, 0 0 2px #cf6766;
+  box-shadow: 0 0 5px #ffd500b8, 0 0 2px #ffd500e5, 0 0 2px #ffd500e5,
+    0 0 2px #ffd500e5;
 }
