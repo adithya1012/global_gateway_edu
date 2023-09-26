@@ -19,8 +19,8 @@
 
 /* Appearance */
 .links {
-  background-color: #1212123c;
-
+  background-color: #12121244;
+  border-top: 0.5px solid #0326354f;
   border-bottom: 1px solid #0003;
   box-shadow: 0 0 32px #0003;
   font-size: 1em;
