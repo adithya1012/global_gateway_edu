@@ -15,8 +15,10 @@ class HomeBody extends Component {
           <br />
           <br />
           <br />
-          Empowering Minds, Bridging Worlds: <br />
-          Your Global Education Journey Begins Here.
+          <p className="getStartedText">
+            Empowering Minds, Bridging Worlds: <br />
+            Your Global Education Journey Begins Here.
+          </p>
           <br />
           <br />
           <button className="get-started">GET STARTED</button>
