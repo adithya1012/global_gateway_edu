@@ -23,6 +23,7 @@ class HomeBody extends Component {
           <br />
           <button className="get-started">GET STARTED</button>
         </p>
+        <br />
       </body>
     );
   }
