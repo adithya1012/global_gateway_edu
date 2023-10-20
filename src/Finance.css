@@ -1,0 +1,59 @@
+#main-image{
+    margin-top: 5%;
+}
+.heading{
+    color: rgb(93, 224, 247);
+    text-align: center;
+}
+.bank{
+    width: 80%;
+    height:20%;
+    box-shadow: 0 7px 10px 0 rgba(100, 110, 248, 0.2), 0 6px 20px 0 rgba(87, 160, 245, 0.19);
+    margin-top: 15%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    margin-left:50%;
+    padding:5px;
+     margin: 105px 645px;
+    }
+    .review:hover{
+        box-shadow: 7px 7px 7px 1px lightblue;
+        }
+        .bank-details{
+        display: inline-block;
+        font-size: 20px;
+    }
+    .para{
+        font-size: 20px;
+        text-align: center;
+    }
+    #icici{
+        padding: 35px;
+    }
+    #hdfc{
+        padding: 16px;
+    }
+    #sbi{
+        padding: 17px;
+    }
+    .content {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .financeservice{
+        width:100%;
+      
+    }
+    #learnmore{
+        background-color: blue;
+        color: white;
+        width:12%;
+        height: 30px;
+        border-radius: 5px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 15px;
+    }
+    #learnmore:hover{
+        background-color: rgb(101, 101, 243);
+    }
