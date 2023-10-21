@@ -4,6 +4,7 @@ import HomeBody from "./components/homeBody";
 import LoginBody from "./components/loginPage";
 import GreService from "./components/greService";
 import TileService from "./components/tileService";
+import Footer from "./components/footer";
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       {/*<HomeBody />*/}
       {/* <LoginBody /> */}
       {/* <GreService /> */}
-      <TileService/>
+      ({/*<TileService/>*/}
+      <Footer/>
     </div>
   );
 }
