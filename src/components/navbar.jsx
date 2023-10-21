@@ -1,14 +1,15 @@
 import React, { Component } from "react";
+import "../styles/navbar.css";
 class Navbar extends Component {
   render() {
     return (
       <div>
-        <header id="header">
+        <header id="nav-header">
           <div class="searchBar">
-            <div class="column-one">
+            <div class="nav-column-one">
               <img src="../images/logo1.png" width="105px" height="50px" />
             </div>
-            <div class="column-two">
+            <div class="nav-column-two">
               <form onsubmit="event.preventDefault();" role="search">
                 <label for="search">Search for stuff</label>
                 <input
@@ -23,11 +24,11 @@ class Navbar extends Component {
                 </button>
               </form>
             </div>
-            <div class="column-three">
-              <button class="login">LOG IN </button>
+            <div class="nav-column-three">
+              <button class="nav-login">LOG IN </button>
             </div>
           </div>
-          <nav class="links">
+          <nav class="nav-links">
             <a href="#">Services</a>
             <a href="#">University List</a>
             <a href="#">Events</a>

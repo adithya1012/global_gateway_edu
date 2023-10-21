@@ -1,12 +1,13 @@
 import React, { Component } from "react";
+import "../styles/homeBody.css";
 class HomeBody extends Component {
   render() {
     return (
       <body>
-        <aside>
+        <aside className="homebody-aside">
           <img src="../images/home_page_image.jpg" width="350" height="400" />
         </aside>
-        <p className="asside-text">
+        <p className="homebody-asside-text">
           <em>
             "Studying abroad is like opening a book to pages you've never
             imagined, with each chapter filled with adventure, knowledge, and
