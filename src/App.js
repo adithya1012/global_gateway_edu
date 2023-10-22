@@ -5,6 +5,9 @@ import LoginBody from "./components/loginPage";
 import GreService from "./components/greService";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
+import Alumni from "./components/Alumni";
+import Finance from "./components/Finance";
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -22,6 +25,8 @@ function App() {
           <Route path="/universityList" element={<UniversityListBody />} />
           <Route path="/login" element={<LoginBody />} />
           <Route path="/greService" element={<GreService />} />
+          <Route path="/Alumni" element={<Alumni />} />
+          <Route path="/Finance" element={<Finance />} />
         </Routes>
       </Router>
       <Footer />
