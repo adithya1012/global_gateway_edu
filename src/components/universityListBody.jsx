@@ -139,7 +139,9 @@ const UniversityListBody = () => {
                 <option value="EC">Electrical and Electronics</option>
                 <option value="CE">Chemical Engineering</option>
               </select>{" "}
-              <button onClick={handleUnivSearch}>Search</button>
+              <button className="univ-search-btn" onClick={handleUnivSearch}>
+                Search
+              </button>
             </pre>
           </form>
         </div>

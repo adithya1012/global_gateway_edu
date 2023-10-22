@@ -1,3 +1,23 @@
+.univ-search-btn {
+  padding: 8px 12px;
+  background-color: #ffd500e5;
+  color: #0b0909;
+  font-weight: bold;
+  width: 90px;
+  border-width: 1.8px;
+  border: #0b0909 solid 1px;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.univ-search-btn:hover {
+  background: #ffd5009a;
+  color: rgb(11, 10, 10);
+  border: none;
+  box-shadow: 0 0 2px #ffd500e5, 0 0 2px #ffd500e5, 0 0 2px #ffd500e5,
+    0 0 2px #ffd500e5;
+}
 .UL-item {
   text-align: center;
   align-items: center;
