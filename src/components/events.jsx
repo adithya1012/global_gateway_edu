@@ -5,43 +5,52 @@ import { useNavigate } from "react-router-dom";
 
 const cardData = [
   {
-    name: "Event 1",
+    name: "Master's Fair in Mumbai",
     img: "../images/event-1.jpg",
-    description: " Some Description",
-    evlink: "href://somewhere",
+    description:
+      "Interact with universities about their master's programmes based on your profile.",
+    evlink: "https://qs.topuniversities.com/events/masters/mumbai",
   },
   {
-    name: "Event 2",
+    name: "Master's Meetings in Bangalore",
     img: "../images/event-2.jpg",
-    description: " Some Description",
-    evlink: "href://somewhere",
+    description:
+      "Interact with universities about their master's programmes based on your profile.",
+    evlink: "https://qs.topuniversities.com/events/masters/bangalore",
   },
   {
-    name: "Event 3",
+    name: "Open Networking in New Delhi",
     img: "../images/event-3.jpg",
-    description: " Some Description",
-    evlink: "href://somewhere",
+    description:
+      "Interact with universities about their master's programmes based on your profile.",
+    evlink: "https://qs.topuniversities.com/events/masters/newdelhi",
   },
 ];
 
 function Card({ name, img, description, evlink }) {
   const navigate = useNavigate();
-  const handleCardClick = (path) => {
-    navigate(path);
-    console.log(clink);
+  const handleCardClick = (evlink) => {
+    navigate(evlink);
+    console.log(evlink);
   };
 
   return (
-    <div
-      className="card"
-      style={{ width: "18rem" }}
-      onClick={() => {
-        handleCardClick(clink);
-      }}
-    >
-      <div className="card-body" style={{ backgroundImage: { img } }}>
-        <h5 className="card-title">{name}</h5>
-        <p className="card-text">{description}</p>
+    <div style={{ "margin-top": "5vh" }}>
+      <div
+        className="card"
+        style={{ width: "18rem", backgroundImage: "../images/event-3.jpg" }}
+        // onClick={() => {
+        //   handleCardClick(evlink);
+        // }}
+      >
+        <img src={img} style={{ width: "inherit" }}></img>
+        <div className="card-body">
+          <h5 className="card-title">{name}</h5>
+          <p className="card-text">{description}</p>
+          <a href={evlink} style={{ "align-item": "center" }}>
+            Details
+          </a>
+        </div>
       </div>
     </div>
   );
