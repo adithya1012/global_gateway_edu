@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import "../styles/homeBody.css";
+import TileService from "./tileService";
+
 class HomeBody extends Component {
   render() {
     return (
-      <body className="homebody-body">
+      <body >
+        <div className="homebody-body">
         <aside className="homebody-aside">
           <img src="../images/home_page_image.jpg" width="350" height="400" />
         </aside>
@@ -24,6 +27,8 @@ class HomeBody extends Component {
           <br />
           <button className="get-started">GET STARTED</button>
         </p>
+        </div>
+        <TileService />
       </body>
     );
   }
