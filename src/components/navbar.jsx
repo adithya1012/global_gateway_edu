@@ -32,7 +32,7 @@ class Navbar extends Component {
           <nav class="nav-links">
             <Link to="/">Services</Link>
             <Link to="/universityList">University List</Link>
-            <Link to="/">Events</Link>
+            <Link to="/events">Events</Link>
             <Link to="/">Aluminni Connect</Link>
             {/* <a href="#">Services</a>
             <a href="#">University List</a>
