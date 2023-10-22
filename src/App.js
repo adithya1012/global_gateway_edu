@@ -1,20 +1,31 @@
 import "./App.css";
-import Navbar from "./components/navbar";
 import HomeBody from "./components/homeBody";
+import UniversityListBody from "./components/universityListBody";
 import LoginBody from "./components/loginPage";
-import GreService from "./components/greService"
-
+import GreService from "./components/greService";
+import Navbar from "./components/navbar";
 import Footer from "./components/footer";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Navbar />
-      <HomeBody />
-      {/* <LoginBody />  */}
-      {/* <GreService /> */}
-      <Footer/>
-    </div>
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomeBody />} />
+          <Route path="/universityList" element={<UniversityListBody />} />
+          <Route path="/login" element={<LoginBody />} />
+          <Route path="/greService" element={<GreService />} />
+        </Routes>
+      </Router>
+      <Footer />
+    </>
   );
 }
 
