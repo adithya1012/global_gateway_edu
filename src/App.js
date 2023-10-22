@@ -1,6 +1,5 @@
 import "./App.css";
 import HomeBody from "./components/homeBody";
-
 import UniversityListBody from "./components/universityListBody";
 import {
   BrowserRouter as Router,

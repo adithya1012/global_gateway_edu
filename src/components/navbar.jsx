@@ -1,16 +1,18 @@
 import React, { Component } from "react";
+import "../styles/navbar.css";
+import { Link } from "react-router-dom";
 class Navbar extends Component {
   render() {
     return (
       <div>
-        <header id="header">
-          <div className="searchBar">
-            <div className="column-one">
+        <header id="nav-header">
+          <div class="searchBar">
+            <div class="nav-column-one">
               <img src="../images/logo1.png" width="105px" height="50px" />
             </div>
-            <div className="column-two">
-              <form role="search">
-                <label htmlFor="search">Search for stuff</label>
+            <div class="nav-column-two">
+              <form onsubmit="event.preventDefault();" role="search">
+                <label for="search">Search for stuff</label>
                 <input
                   id="search"
                   type="search"
@@ -23,19 +25,19 @@ class Navbar extends Component {
                 </button>
               </form>
             </div>
-            <div className="column-three">
-              <button className="login">LOG IN </button>
+            <div class="nav-column-three">
+              <button class="nav-login">LOG IN </button>
             </div>
           </div>
-          <nav className="links">
+          <nav class="nav-links">
             <Link to="/">Services</Link>
             <Link to="/universityList">University List</Link>
             <Link to="/">Events</Link>
             <Link to="/">Aluminni Connect</Link>
-            <a href="#">Services</a>
+            {/* <a href="#">Services</a>
             <a href="#">University List</a>
             <a href="#">Events</a>
-            <a href="#">Aluminni Connect</a>
+            <a href="#">Aluminni Connect</a> */}
             <span className="line"></span>
           </nav>
         </header>
