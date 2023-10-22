@@ -26,7 +26,7 @@ const cardData = [
   {
     title: "Statement of Purpose",
     text: "Achieve your academic and career goals with a compelling Statement of Purpose and expert guidance",
-    clink: "/greService",
+    clink: "/SOP",
   },
   {
     title: "Financial Planning",

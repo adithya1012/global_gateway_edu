@@ -7,6 +7,7 @@ import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import Alumni from "./components/Alumni";
 import Finance from "./components/Finance";
+import SOP from "./components/SOP";
 
 import {
   BrowserRouter as Router,
@@ -27,6 +28,7 @@ function App() {
           <Route path="/greService" element={<GreService />} />
           <Route path="/Alumni" element={<Alumni />} />
           <Route path="/Finance" element={<Finance />} />
+          <Route path="/SOP" element={<SOP />} />
         </Routes>
       </Router>
       <Footer />
