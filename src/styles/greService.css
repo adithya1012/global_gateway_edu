@@ -9,8 +9,8 @@
 .greSeviceBody {
     margin-top: 10vh;
     padding: 0;
-    width: 100vw; /* Full viewport width */
-    height: 100vh; /* Full viewport height */
+    width: 99vw; 
+    /* height: 100vh; Full viewport height */
     /* display: flex; */
     /* flex-direction: column; */
   }

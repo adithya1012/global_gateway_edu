@@ -3,7 +3,7 @@ import "../styles/homeBody.css";
 class HomeBody extends Component {
   render() {
     return (
-      <body>
+      <body className="homebody-body">
         <aside className="homebody-aside">
           <img src="../images/home_page_image.jpg" width="350" height="400" />
         </aside>

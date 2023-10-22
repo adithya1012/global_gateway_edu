@@ -43,11 +43,8 @@ const GreService = () => {
                 </ul>
                 <br />
                 <p>Your GRE journey starts here. Let us be your compass on the path to success. Together, we'll transform your dreams into reality.</p>
-
             </section>
-
         </body>
-      
     );
 }
 

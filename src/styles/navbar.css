@@ -197,3 +197,8 @@
   box-shadow: 0 0 2px #ffd500e5, 0 0 2px #ffd500e5, 0 0 2px #ffd500e5,
     0 0 2px #ffd500e5;
 }
+
+.nav-body {
+  z-index: 1;
+  position: absolute;
+}

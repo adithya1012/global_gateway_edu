@@ -3,7 +3,7 @@ import "../styles/navbar.css";
 class Navbar extends Component {
   render() {
     return (
-      <div>
+      <div class="nav-body">
         <header id="nav-header">
           <div class="searchBar">
             <div class="nav-column-one">
