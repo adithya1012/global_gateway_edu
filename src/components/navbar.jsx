@@ -39,13 +39,9 @@ class Navbar extends Component {
             </div>
           </div>
           <nav class="nav-links">
-            {/* <Link to="/">Services</Link> */}
-            {/* <Link to="/universityList">University List</Link> */}
-            {/* <Link to="/">Events</Link>
-            <Link to="/">Aluminni Connect</Link> */}
             <a href="/">Services</a>
             <a href="/universityList">University List</a>
-            <a href="">Events</a>
+            <a href="/events">Events</a>
             <a href="/Alumni">Alumni Connect</a>
             <span className="line"></span>
           </nav>

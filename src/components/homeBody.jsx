@@ -2,12 +2,10 @@ import React, { Component } from "react";
 import "../styles/homeBody.css";
 import TileService from "./tileService";
 import Navbar from "./navbar";
-
 class HomeBody extends Component {
   render() {
     return (
       <>
-        {/* <Navbar /> */}
         <body>
           <div className="homebody-body">
             <aside className="homebody-aside">
@@ -32,7 +30,9 @@ class HomeBody extends Component {
               </p>
               <br />
               <br />
-              <button className="get-started">GET STARTED</button>
+              <a href="/login">
+                <button className="get-started">GET STARTED</button>
+              </a>
             </p>
           </div>
           <TileService />
