@@ -1,0 +1,126 @@
+/* .greImage {
+    width: 100%;
+    height: 100%;
+    background: url("../images/GRE.png");
+    background-size: cover;
+} */
+
+/* Apply general styles to the entire page */
+.greSeviceBody {
+    margin-top: 10vh;
+    padding: 0;
+    width: 99vw; 
+    /* height: 100vh; Full viewport height */
+    /* display: flex; */
+    /* flex-direction: column; */
+  }
+  
+  /* Style the top half of the page with an image */
+  .greImage {
+    /* width: 20vh; */
+    height: 45vh;
+    /* flex: 1;  */
+    background: url("../images/GRE.png") no-repeat;
+    /* background-size: cover; Adjust the image size to cover the entire top half */
+    background-position: center right; /* Center the image horizontally and vertically */
+    background-size: cover;
+    /* display: flex; */
+    /* justify-content: center; */
+    align-items: center;
+    /* font-size: 6vh; */
+    /* font-family:'Times New Roman', Times, serif; */
+    /* color: white; */
+  }
+  
+  /* Style the bottom half of the page containing content */
+  .greSevice_content_split {
+    flex: 1; /* Occupies half of the available height*/
+    background-color: #f2f2f2; /* Optional background color for the bottom half */
+    display: flex;
+    flex-direction: row;
+  }
+
+  .greSevice_content_split p {
+    font-size: 2.5vh;
+  }
+
+  .greService_apart {
+    background-color: #f2f2f2;
+    font-size: 2.5vh;
+    margin-top: -3vh;
+    padding: 4vh;
+  }
+
+  .greSevice_info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content:first baseline; */
+    /* margin-left: 20%;
+    margin-top: 2%; */
+    padding: 4vh;
+  }
+
+  .greSevice_info_heading {
+    margin: 4%;
+    font-size: 4.5vh;
+    
+  }
+
+  .greSevice_shedule {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .greSevice_box {
+    display: flex;
+    flex-direction: column;
+    /* border: .05px solid #333; */
+    /* margin: 2vh; */
+    padding: 5vh;
+    /* box-shadow: #333; */
+    background-color: rgba(253, 253, 253, 0.798);
+    align-items: center;
+    padding: 8vh;
+  }
+.greSevice_box h3 {
+    margin-top: -1vh;
+}
+  .greSevice_box:hover {
+    box-shadow: 5px 5px 10px rgb(127, 147, 148);
+  }
+  
+  .greSevice_box input {
+    border: none;
+    background-color: rgb(195, 195, 195);
+    height: 4vh;
+    border-radius: 1vh;
+  }
+
+  .greSevice_box input:hover {
+    background-color: white;
+    border: 2px solid #333;
+  }
+
+  .greSevice_box button {
+    border: 1px solid #333;
+    border-radius: 1vh;
+    background-color: #E9B384;
+    height: 4vh;
+    width: 15vh;
+    
+  }
+
+  .greSevice_box button:hover {
+    /* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); */
+    /* background-color: rgb(178, 200, 251); */
+    background-color:  #ffd500e5;
+    box-shadow: 0 0 2px #ffd500e5, 0 0 2px #ffd500e5, 0 0 2px #ffd500e5,0 0 2px #ffd500e5;
+    border: none;
+    /* border: 2px solid #333; */
+  }
+
+  

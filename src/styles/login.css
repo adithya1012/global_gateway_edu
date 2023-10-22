@@ -1,0 +1,260 @@
+/* Source : https://www.youtube.com/watch?v=p1GmFCGuVjw&ab_channel=Codehal */
+
+
+/* header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background-color: #5d5c61;   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+} */
+
+.LoginPage {
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+/* background: url("../images/study_abroad1.jpeg") no-repeat;  */
+background-size: cover;
+background-position: center;
+}
+
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppines", sans-serif;
+} */
+
+/* .logo {
+    font-size: 2em;
+    color: #fff;
+    user-select: none;
+} */
+
+/* .navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 2vw;
+} */
+
+/* .navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+} */
+
+/* .navigation a:hover:after {
+    transform-origin: left;
+    transform: scaleX(1);
+} */
+
+/* .navigation .btnLogin-popup {
+    width: 10vw;
+    height: 4vw;
+    /* background: transparent; 
+    background: #557a95;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+} */
+
+/* .navigation .btnLogin-popup:hover {
+    background: #7395AE;
+    color: black;
+} */
+
+.Login-wrapper {
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    backdrop-filter: blur(20px);
+    overflow: hidden;
+    transition: height .2s ease;
+}
+
+.Login-wrapper.active {
+    height: 520px;
+}
+
+.Login-wrapper .form-box {
+    width: 100%;
+    padding: 40px;
+}
+
+.Login-wrapper .form-box.login {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.Login-wrapper.active .form-box.login {
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.Login-wrapper.active .form-box.register {
+    transition: none;
+    transform: translateX(0);
+}
+
+.Login-wrapper .form-box.register {
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+
+.Login-wrapper .icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #162938;
+    border-radius: 0 20px 0 20px;
+    font-size: 2em;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1;
+}
+
+
+.Login-form {
+    background: white;
+
+}
+
+
+
+.form-box h2 {
+    font-size: 2em;
+    color: #162938;
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #162938;
+    margin: 30px 0;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #162938;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-weight: 600;
+    font-size: 1em;
+    padding: 0 35px 0 10px;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    line-height: 57px;
+}
+
+.remember-forgot {
+    font-size: .9em;
+    color: #162938;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    justify-content: space-between;
+    display: flex;
+}
+
+.remember-forgot label input {
+    accent-color: #162938;
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: #162938;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    height: 45px;
+    background: #162938;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+}
+
+.login-register {
+    font-size: .9em;
+    color: #162938;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.login-register p a {
+    color: #162938;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-register p a:hover {
+    text-decoration: underline;
+} 
