@@ -4,16 +4,17 @@ import { Link } from "react-router-dom";
 class Navbar extends Component {
   render() {
     return (
-      <div>
+      <div class="nav-body">
         <header id="nav-header">
           <div class="searchBar">
             <div class="nav-column-one">
               <img src="../images/logo1.png" width="105px" height="50px" />
             </div>
             <div class="nav-column-two">
-              <form onsubmit="event.preventDefault();" role="search">
-                <label for="search">Search for stuff</label>
+              <form onsubmit="event.preventDefault();" role="search" class="nav-form">
+                <label for="search" class="nav-label">Search for stuff</label>
                 <input
+                  class="nav-input"
                   id="search"
                   type="search"
                   placeholder="Search..."

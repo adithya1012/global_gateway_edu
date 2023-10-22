@@ -5,11 +5,11 @@ class HomeBody extends Component {
     return (
       <>
         <Navbar />
-        <body>
-          <aside>
+        <body className="homebody-body">
+          <aside className="homebody-aside">
             <img src="../images/home_page_image.jpg" width="350" height="400" />
           </aside>
-          <p className="asside-text">
+          <p className="homebody-asside-text">
             <em>
               "Studying abroad is like opening a book to pages you've never
               imagined, with each chapter filled with adventure, knowledge, and
