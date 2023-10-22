@@ -3,27 +3,33 @@
   align-items: center;
   align-content: center;
   align-self: center;
-  padding-left: 11rem;
+  padding-left: 1rem;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   font-size: medium;
   border-width: 2rem;
   border: 1px solid;
-  margin-top: 1rem;
-  width: 100%;
+  margin-top: 1.7rem;
   height: 3rem;
   display: flex;
   border-radius: 18px;
-  border-color: rgba(255, 255, 127, 0.326);
-  background-color: rgba(32, 27, 27, 0.806);
-  margin-left: 3rem;
-  box-shadow: 10px 10px 50px 5px rgba(85, 86, 87, 0.906);
+  border-color: rgba(255, 255, 127, 0.397);
+  background-color: rgba(32, 27, 27, 0.655);
+  margin-left: 8rem;
+  box-shadow: 5px 5px 20px 5px rgba(85, 86, 87, 0.521);
   color: rgb(247, 236, 220);
   font-size: medium;
 }
 .ulist {
   padding-left: 1rem;
-  padding-right: 3rem;
+  padding-right: 1rem;
+  text-align: center;
+}
+.ulist-univ {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: center;
+  width: 4rem;
 }
 .ul-span {
   align-items: center;
@@ -33,7 +39,7 @@
 .ul-form {
   width: inherit;
   border-radius: 0px;
-  background-color: rgba(250, 230, 130, 0.454);
+  background-color: rgba(228, 195, 28, 0.196);
   height: 2rem;
   text-align: center;
   padding-top: 0.2rem;
@@ -43,23 +49,23 @@
   font-size: medium;
 }
 .ul-body {
-  background-image: url("../library.jpg");
-
+  /* background-image: url("../library.jpg"); */
   padding: 0;
   margin: 0;
-  height: 50rem;
+  height: inherit;
   width: 100%;
 }
 .ul-heading {
-  height: 4rem;
-  background-color: rgba(0, 0, 0, 0.726);
+  height: 3rem;
+  background-color: rgba(0, 0, 0, 0.82);
 }
 .universityList-heading {
   margin-top: 6rem;
   font-weight: bold;
   text-align: center;
+  font-size: large;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Verdana, sans-serif;
   color: azure;
-  padding-top: 1rem;
+  padding: 1rem;
 }

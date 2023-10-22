@@ -1,18 +1,23 @@
 import React, { Component } from "react";
-class UniversityListItem extends Component {
-  render() {
-    return (
-      <div className="UL-item">
-        <tr>
-          <td className="ulist">1.</td>
-          <td className="ulist">Purdue University</td>
-          <td className="ulist">Computer Science</td>
-          <td className="ulist">Fort Wayne, Indiana</td>
-          <td className="ulist">3.5</td>
-        </tr>
-      </div>
-    );
-  }
+
+function UniversityListItem(props) {
+  return (
+    <>
+      <tr className="UL-item">
+        <td className="ulist">{props.c.rank}</td>
+        <td className="ulist">{props.c.name}</td>
+        <td className="ulist" style={{ width: "20rem" }}>
+          {props.c.universityname}
+        </td>
+        <td className="ulist" style={{ width: "14rem" }}>
+          {props.c.city}
+        </td>
+        <td className="ulist" style={{ width: "4rem" }}>
+          {props.c.rating}
+        </td>
+      </tr>
+    </>
+  );
 }
 
 export default UniversityListItem;

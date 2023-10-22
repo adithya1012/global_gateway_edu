@@ -4,35 +4,39 @@ class Navbar extends Component {
     return (
       <div>
         <header id="header">
-          <div class="searchBar">
-            <div class="column-one">
+          <div className="searchBar">
+            <div className="column-one">
               <img src="../images/logo1.png" width="105px" height="50px" />
             </div>
-            <div class="column-two">
-              <form onsubmit="event.preventDefault();" role="search">
-                <label for="search">Search for stuff</label>
+            <div className="column-two">
+              <form role="search">
+                <label htmlFor="search">Search for stuff</label>
                 <input
                   id="search"
                   type="search"
                   placeholder="Search..."
-                  autofocus
+                  autoFocus
                   required
                 />
-                <button class="goButton" type="submit">
+                <button className="goButton" type="submit">
                   Go
                 </button>
               </form>
             </div>
-            <div class="column-three">
-              <button class="login">LOG IN </button>
+            <div className="column-three">
+              <button className="login">LOG IN </button>
             </div>
           </div>
-          <nav class="links">
+          <nav className="links">
+            <Link to="/">Services</Link>
+            <Link to="/universityList">University List</Link>
+            <Link to="/">Events</Link>
+            <Link to="/">Aluminni Connect</Link>
             <a href="#">Services</a>
             <a href="#">University List</a>
             <a href="#">Events</a>
             <a href="#">Aluminni Connect</a>
-            <span class="line"></span>
+            <span className="line"></span>
           </nav>
         </header>
       </div>
