@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "../styles/homeBody.css";
 import TileService from "./tileService";
 import Navbar from "./navbar";
-
 class HomeBody extends Component {
   render() {
     return (

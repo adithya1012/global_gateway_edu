@@ -1,0 +1,17 @@
+.event-heading {
+  margin-top: 6rem;
+  font-weight: bold;
+  text-align: center;
+  font-size: large;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Verdana, sans-serif;
+  color: azure;
+  padding: 1rem;
+}
+.ev-heading {
+  height: 3rem;
+  background-color: rgba(0, 0, 0, 0.82);
+}
+.ev-div {
+  margin-left: 2rem;
+}
