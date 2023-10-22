@@ -8,6 +8,8 @@ import Footer from "./components/footer";
 import Events from "./components/events";
 import Alumni from "./components/Alumni";
 import Finance from "./components/Finance";
+import SOP from "./components/SOP";
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -28,6 +30,7 @@ function App() {
           <Route path="/events" element={<Events />} />
           <Route path="/Alumni" element={<Alumni />} />
           <Route path="/Finance" element={<Finance />} />
+          <Route path="/SOP" element={<SOP />} />
         </Routes>
       </Router>
       <Footer />
