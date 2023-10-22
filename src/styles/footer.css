@@ -39,9 +39,9 @@ footer {
   .footer-container {
     display: flex;
     justify-content: space-around;
-    background-color: rgb(161, 161, 244);
+    background-color: #A1CCD1;
     padding: 20px;
-    color: white;
+    color: black;
     margin-top: 4vh;
   }
   
@@ -66,7 +66,7 @@ footer {
   .social-icon a,
   .info-links a {
     text-decoration: none;
-    color: white;
+    color: black;
   }
   
   .info-links a:hover,

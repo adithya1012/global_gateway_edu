@@ -31,7 +31,7 @@ const cardData = [
   {
     title: "Financial Planning",
     text: "Empower your financial future with our resources and expert advice, making confident financial decisions for your education and beyond",
-    clink: "/greService",
+    clink: "/Finance",
   },
   {
     title: "Flight Booking",
