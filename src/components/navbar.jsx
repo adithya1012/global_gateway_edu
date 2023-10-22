@@ -42,7 +42,7 @@ class Navbar extends Component {
             <a href="/">Services</a>
             <a href="/universityList">University List</a>
             <a href="/events">Events</a>
-            <a href="#">Aluminni Connect</a>
+            <a href="/Alumni">Alumni Connect</a>
             <span className="line"></span>
           </nav>
         </header>

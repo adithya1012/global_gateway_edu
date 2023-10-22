@@ -39,10 +39,10 @@ h3 {
 .footer-container {
   display: flex;
   justify-content: space-around;
-  background-color: rgb(161, 161, 244);
+  background-color: #a1ccd1;
   padding: 20px;
-  color: white;
-  margin-top: 2vh;
+  color: black;
+  margin-top: 4vh;
 }
 
 .column {
@@ -66,7 +66,7 @@ h3 {
 .social-icon a,
 .info-links a {
   text-decoration: none;
-  color: white;
+  color: black;
 }
 
 .info-links a:hover,

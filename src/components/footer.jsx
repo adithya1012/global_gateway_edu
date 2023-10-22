@@ -37,16 +37,16 @@ function Footer() {
         </ul>
       </div>
       <div className="column">
-        <h3>Top University in USA</h3>
+        <h3>Copyrights @ 2023 GGE</h3>
         <ul className="info-links">
           <li>
-            <a href="#">University 1</a>
+            <a href="#">Privacy Policy</a>
           </li>
           <li>
-            <a href="#">University 2</a>
+            <a href="#">Terms of use</a>
           </li>
           <li>
-            <a href="#">University 3</a>
+            <a href="#">Help</a>
           </li>
         </ul>
       </div>
