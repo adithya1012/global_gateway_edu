@@ -1,5 +1,5 @@
 import React from "react";
-import "../Finance.css";
+import "../styles/Finance.css";
 function Finance(){
     const icicibank=()=>{
      
