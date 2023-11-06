@@ -11,7 +11,7 @@ const cardData = [
   {
     title: "Letter of Recommendation",
     text: "Effortlessly craft personalized and impactful Letters of Recommendation with our user-friendly platform",
-    clink: "/greService",
+    clink: "/lorService",
   },
   {
     title: "University Recommendation",
