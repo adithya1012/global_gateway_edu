@@ -46,7 +46,7 @@ const cardData = [
   {
     title: "Resume Preparation",
     text: "Create personalized and impactful resumes with our user-friendly platform. Get comprehensive support for your resume needs.",
-    clink: "/greService",
+    clink: "/Resume",
   },
 ];
 

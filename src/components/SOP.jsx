@@ -5,18 +5,13 @@ function SOP(){
 
     return(
         <>
-          {/* <head>
-     <header class="heading">
-        <img src="../images/sop.png" />
-    </header> 
-    </head>  */}
     <body>
        <div class="sop-image">
        <img src="../images/sop.png" />
        </div>
-       <h2 align="center">About Service</h2>
+      
         <div class="info" >
-        
+        <h2 align="center">About Service</h2>
         <p>Disclaimer: I received admits from USC, UBC, UIUC, Cornell, UCSD, Purdue, and NYU for Fall 2019.</p>
 
         <p>The SOP is one of the most critical parts of your application because it helps the admissions committee know your personal interests and experiences. No other part of the application conveys this information to the committee. It can help you explain your sins and give reason that they will not be repeated. It can help you change a reject to an admit. It can also help you change an admit to an admit with funding. Given this importance, we want to ensure YOU get the best. For the same reason, our drafts are written by students who have already graduated from some of the top Ivy League universities.</p>
@@ -43,6 +38,7 @@ function SOP(){
          <option value="universitylist">University Shortlisting</option>
          <option value="gre">GRE Preparation</option>
          <option value="visa">Visa Application Help</option>
+         <option value="Resume">Resume Drafting</option>
         </select><br /><br />
         <input type="button" value="Book Now" id="booknow" />
        </div>
