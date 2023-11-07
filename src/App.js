@@ -9,7 +9,9 @@ import Events from "./components/events";
 import Alumni from "./components/Alumni";
 import Finance from "./components/Finance";
 import SOP from "./components/SOP";
+import LorService from "./components/lorService";
 import Resume from "./components/Resume";
+
 
 import {
   BrowserRouter as Router,
@@ -32,6 +34,7 @@ function App() {
           <Route path="/Alumni" element={<Alumni />} />
           <Route path="/Finance" element={<Finance />} />
           <Route path="/SOP" element={<SOP />} />
+          <Route path="/lorService" element={<LorService />} />
           <Route path="/Resume" element={<Resume />} />
         </Routes>
       </Router>
