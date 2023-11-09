@@ -3,12 +3,13 @@ import HomeBody from "./components/homeBody";
 import UniversityListBody from "./components/universityListBody";
 import LoginBody from "./components/loginPage";
 import GreService from "./components/greService";
-import Navbar from "./components/navbar";
+import CustomNavbar from "./components/navbar";
 import Footer from "./components/footer";
 import Events from "./components/events";
 import Alumni from "./components/Alumni";
 import Finance from "./components/Finance";
 import Users from "./components/users";
+import Recommendation from "./components/recommendation";
 import {
   BrowserRouter as Router,
   Routes,
@@ -19,7 +20,7 @@ import {
 function App() {
   return (
     <>
-      {/* <Navbar />
+      <CustomNavbar />
       <Router>
         <Routes>
           <Route path="/" element={<HomeBody />} />
@@ -29,10 +30,10 @@ function App() {
           <Route path="/events" element={<Events />} />
           <Route path="/Alumni" element={<Alumni />} />
           <Route path="/Finance" element={<Finance />} />
+          <Route path="/recom" element={<Recommendation />} />
         </Routes>
       </Router>
-      <Footer /> */}
-      <Users />
+      <Footer />
     </>
   );
 }
