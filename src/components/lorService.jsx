@@ -1,9 +1,30 @@
-import React, { Component,useRef } from "react";
+import React, { Component,useRef,useState } from "react";
 // import lorImage from "../images/lor.png"
 import "../styles/lorService.css";
-
+import Axios from "axios"
 
 const LorService = () => {
+    const [name, setName]=useState('');
+    const [email,setEmail]=useState('');
+    const [mobilenumber,setMobilenumber]=useState('');
+    
+        const handleClick = () => {
+            Axios.post("http://localhost:8000/add_userlor_appointment", {
+              name:name,
+              email:email,
+              mobilenumber:mobilenumber,
+            })
+              .then((response) => {
+                console.warn(response.data);
+                alert("Appointment confirmed. We'll discuss details via WhatsApp. Thank you.");
+                setName("");
+                setEmail("");
+                setMobilenumber("");
+              })
+              .catch((error) => {
+                console.error("Error:", error);
+              });
+          };
     
     return (
         <body class="lorSeviceBody">
@@ -19,15 +40,17 @@ const LorService = () => {
                 <br />
                 
                 </section>
-                <section class="lorSevice_shedule">
+                <section class="lorSevice_shedule" method="post">
                     <div class="lorSevice_box">
                         <h3 >Shedule an Appointment</h3>
                         <br />
-                        <section>Name: <input type="text" /></section>
+                        <section>Name: <input type="text" value={name} onChange={(e) => setName(e.target.value)}/></section>
                         <br />
-                        <section>Phone: <input type="phone" /></section>
+                        <section>E-mail: <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}/></section>
+                        <br />
+                        <section>Mobile number: <input type="number" value={mobilenumber} onChange={(e) => setMobilenumber(e.target.value)}/></section>
                         <br /><br />
-                        <button>Submit</button>
+                        <button onClick={handleClick}>Submit</button>
                     </div>
                 </section>
             </section>
