@@ -52,10 +52,10 @@
 .cards p{
         text-align: center;
 }
-#booknow{
+.sop button{
         background-color:#E9B384;
 }
-#booknow:hover{
+.sop button:hover{
         background-color: #ffd500e5;
         border: none;
 }

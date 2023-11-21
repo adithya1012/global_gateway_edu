@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import "../styles/Resume.css";
 import Axios from "axios"
 
-function Resume(){
+const Resume=()=>{
 const [name, setName]=useState('');
 const [email,setEmail]=useState('');
 const [mobilenumber,setMobilenumber]=useState('');
@@ -43,7 +43,7 @@ const handleClick = () => {
         <p>Now, we can help you craft the perfect resume that is coherent with your profile. Increase your chances of gaining admission, internships, assistantships, and employment.</p>
        <br /><br /></div>
       
-       <form  class="cards" method="post">
+       <form  class="cards" method="post" onSubmit={(e) => {e.preventDefault()}}>
          <h3 align="center">Schedule an Appointment</h3>
        
         <p>Not sure if we can help you? Interested in Learning more about the service over a free 5 minute WhatsApp session with us?</p>
@@ -51,7 +51,7 @@ const handleClick = () => {
         <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)}/><br /><br />
         <label for="email">E-Mail : </label>
         <input type="email" placeholder="E-mail ID" value={email} onChange={(e) => setEmail(e.target.value)}/><br /><br />
-        <label for="mobilenum">Mobile Number : </label>
+        <label for="mobilenumber">Mobile Number : </label>
         <input type="number" placeholder="Mobile Number" value={mobilenumber} onChange={(e) => setMobilenumber(e.target.value)}/><br /><br />
         <label for="doubts">Doubts regarding : </label>
         <select name="doubts" id="doubts">

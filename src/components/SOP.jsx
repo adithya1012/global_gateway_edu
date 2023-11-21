@@ -3,7 +3,7 @@ import { useState } from "react";
 import "../styles/sop.css";
 import Axios from "axios"
 
-function SOP(){
+const SOP=()=>{
 const [name, setName]=useState('');
 const [email,setEmail]=useState('');
 const [mobilenumber,setMobilenumber]=useState('');
@@ -24,6 +24,7 @@ const handleClick = () => {
       .catch((error) => {
         console.error("Error:", error);
       });
+      
   };
     return(
         <>
@@ -45,8 +46,8 @@ const handleClick = () => {
         
         <p>This is going to change lives. The only question is, are you next? Good. Let's get you into your dream university!</p>
        </div>
-      <form method="post" class="cards">
-       
+      <form method="post" class="cards" onSubmit={(e) => {e.preventDefault()}}>
+       <div class="sop">
          <h3 align="center">Schedule an Appointment</h3>
        
         <p>Not sure if we can help you? Interested in Learning more about the service over a free 5 minute WhatsApp session with us?</p>
@@ -54,7 +55,7 @@ const handleClick = () => {
         <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)}/><br /><br />
         <label for="email">E-Mail : </label>
         <input type="text" placeholder="E-mail ID" value={email} onChange={(e) => setEmail(e.target.value)}/><br /><br />
-        <label for="mobilenum">Mobile Number : </label>
+        <label for="mobilenumber">Mobile Number : </label>
         <input type="number" placeholder="Mobile Number" value={mobilenumber} onChange={(e) => setMobilenumber(e.target.value)}/><br /><br />
         <label for="doubts">Doubts regarding : </label>
         <select name="doubts" id="doubts">
@@ -64,8 +65,8 @@ const handleClick = () => {
          <option value="visa">Visa Application Help</option>
          <option value="Resume">Resume Drafting</option>
         </select><br /><br />
-        <button onClick={handleClick} id="booknow">Submit</button>
-       
+        <button onClick={handleClick}>Submit</button>
+        </div>
        </form>
     </body>
     
