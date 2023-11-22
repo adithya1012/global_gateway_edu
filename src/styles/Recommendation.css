@@ -1,0 +1,25 @@
+/* body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 20vw;
+  padding: 1vw 0.5vw;
+  background-color: rgba(240, 210, 76, 0.32);
+  border-radius: 0 0 10px 10px;
+}
+
+input {
+  border: 1px solid rgb(172, 171, 171);
+  border-radius: 10px;
+  padding: 0.6vw 0.6vw;
+  outline: none;
+  margin: 1px;
+}
