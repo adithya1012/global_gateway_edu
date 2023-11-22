@@ -8,14 +8,11 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-<<<<<<< HEAD
-=======
   password: {
     type: String,
     required: true,
   }
->>>>>>> 51820d7c60ae06b1e21cfc6b3bdaad5dc59a98be
 });
 
-const User = mongoose.model("User", UserSchema);
+const User = mongoose.model("User_detail", UserSchema);
 module.exports = User;
