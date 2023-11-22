@@ -2,10 +2,13 @@ const express = require("express");
 const mongoose = require("mongoose");
 const Router = require("./routes");
 const cors = require("cors");
-
+ 
 const app = express();
 app.use(express.json());
 //Database
+ 
+
+
 
 const database = (module.exports = () => {
   const connectionParams = {
