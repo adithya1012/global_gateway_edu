@@ -11,7 +11,7 @@ const cardData = [
   {
     title: "Letter of Recommendation",
     text: "Effortlessly craft personalized and impactful Letters of Recommendation with our user-friendly platform",
-    clink: "/greService",
+    clink: "/lorService",
   },
   {
     title: "University Recommendation",
@@ -26,7 +26,7 @@ const cardData = [
   {
     title: "Statement of Purpose",
     text: "Achieve your academic and career goals with a compelling Statement of Purpose and expert guidance",
-    clink: "/greService",
+    clink: "/SOP",
   },
   {
     title: "Financial Planning",
@@ -46,7 +46,7 @@ const cardData = [
   {
     title: "Resume Preparation",
     text: "Create personalized and impactful resumes with our user-friendly platform. Get comprehensive support for your resume needs.",
-    clink: "/greService",
+    clink: "/Resume",
   },
 ];
 
