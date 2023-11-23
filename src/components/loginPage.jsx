@@ -40,7 +40,33 @@ const LoginBody = () => {
           console.error("Error:", error);
         });
     };
+    const componentIsMounted = useRef(true);
 
+// useEffect(() => {
+//   return () => {
+//     // Component is unmounting
+//     componentIsMounted.current = false;
+//   };
+// }, []);
+    // const signinHandle = async () => {
+    //   try {
+    //     const response = await Axios.post("http://localhost:8000/add_user_detail", {
+    //       name: name,
+    //       email: email,
+    //       password: pwd,
+    //     });
+    
+    //     if (componentIsMounted.current) {
+    //       console.warn(response.data);
+    //       alert("Data saved successfully");
+    //       setName("");
+    //       setEmail("");
+    //       setPwd("");
+    //     }
+    //   } catch (error) {
+    //     console.error("Error:", error);
+    //   }
+    // };
     const LoginHandle = async (e) => {
       e.preventDefault();
       try {
