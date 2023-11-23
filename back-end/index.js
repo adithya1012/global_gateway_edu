@@ -26,6 +26,6 @@ const database = (module.exports = () => {
 database();
 app.use(cors());
 app.use(Router);
-app.listen(8000, () => {
+app.listen(8001, () => {
   console.log("server is running");
 });
