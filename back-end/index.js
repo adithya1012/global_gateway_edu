@@ -17,7 +17,12 @@ const database = (module.exports = () => {
     const client = mongoose.connect(
       "mongodb+srv://manvikishore7:%23123%23Manvi@cluster0.xbak0ji.mongodb.net/gge?retryWrites=true&w=majority",
       connectionParams
-    );
+    ).then(() => {
+      console.log("Database connected successfully");
+    })
+    .catch((error) => {
+      console.error("Database connection failed:", error);
+    });
   } catch (error) {
     console.log(error);
     console.log("Database connection failed");
