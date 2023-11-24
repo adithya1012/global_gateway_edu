@@ -2,9 +2,11 @@ const express = require("express");
 const mongoose = require("mongoose");
 const Router = require("./routes");
 const cors = require("cors");
- 
+const cookieParser = require('cookie-parser');
+
 const app = express();
 app.use(express.json());
+app.use(cookieParser());
 //Database
  
 const database = (module.exports = () => {
@@ -24,14 +26,22 @@ const database = (module.exports = () => {
       console.error("Database connection failed:", error);
     });
   } catch (error) {
-    console.log(error);
+    console.log(error); 
     console.log("Database connection failed");
   }
 });
 database();
-app.use(cors());
+// app.use(cors());
+const corsOptions = {
+  origin: 'http://localhost:3000', // Replace this port with the frontend port when we place in Heroku platform.
+  credentials: true, // this is required to store the cookies. Cross-Origin Resource Sharing for node.
+};
+
+app.use(cors(corsOptions));
 app.use(Router);
+
+
 app.listen(8000, () => {
-  console.log("server is running");
+  console.log("Server is Running");
 });
 module.exports = app;
