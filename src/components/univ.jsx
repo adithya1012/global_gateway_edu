@@ -5,19 +5,20 @@ import "../styles/univRecommendation.css";
 function Univ(props) {
   return (
     <>
-      <tr className="UL-item-r" style={{ padding: 0 }}>
-        <td className="ulist-r">{props.item.rank}</td>
-        <td className="ulist-r">{props.item.name}</td>
-        <td className="ulist-r" style={{ width: "20rem" }}>
+      <tr className="UL-item-r">
+        <td className="ulist-r" style={{ width: "3rem" }}>
+          {props.item.rank}
+        </td>
+        <td className="ulist-r" style={{ width: "18rem" }}>
           {props.item.universityname}
         </td>
-        <td className="ulist-r" style={{ width: "14rem" }}>
+        <td className="ulist-r" style={{ width: "12rem" }}>
           {props.item.city}
         </td>
         <td className="ulist-r" style={{ width: "4rem" }}>
           {props.item.rating}
         </td>
-        <td className="ulist-r">{props.item.tutionfee}</td>
+        <td className="ulist-r">{props.item.tutionfee} ($)</td>
       </tr>
     </>
   );

@@ -12,25 +12,43 @@ function Recommendation() {
     formState: { errors },
   } = useForm();
   const [universities, setUniversities] = useState([]);
+  const [heading, setHeading] = useState(
+    " Enter your details to get best suited universities for you."
+  );
+  const [img, setImg] = useState("../images/left_arrow2.png");
+  const [hPadding, setHPadding] = useState("13vw");
+  const [blur, setBlur] = useState("0px");
+  let item = {
+    rank: "S.No",
+    universityname: "University Name",
+    city: "City",
+    rating: "Rating",
+    tutionfee: "Tution Fee",
+  };
   const onSubmit = async (data) => {
     let result = await Axios.post("http://localhost:8001/university", {
       data: data,
     });
     const dataArray = Object.values(result.data);
+    dataArray.unshift(item);
+    setHeading("");
+    setHPadding("2vw");
+    setBlur("4px");
+    setImg("../images/down_arrow.png");
+
     setUniversities(dataArray);
   };
   return (
     <>
-      <body style={{ display: "block", minHeight: "95vh" }}>
-        <div className="ev-heading">
-          <h2 className="event-heading">
-            Enter your details to get best suited universities for you.
-          </h2>
-        </div>
+      <body className="ev-body">
+        <div
+          className="background"
+          style={{ filter: "blur(" + blur + ")" }}
+        ></div>
         <br />
-        <aside style={{ float: "left" }}>
+        <aside style={{ float: "left", textAlign: "center", marginTop: "2vh" }}>
           <div className="ev-div">
-            <form className="App" onSubmit={handleSubmit(onSubmit)}>
+            <form className="univ-form" onSubmit={handleSubmit(onSubmit)}>
               <label>
                 Select a Major :{" "}
                 <select name="major" {...register("major")}>
@@ -99,10 +117,37 @@ function Recommendation() {
                 <input type="text" name="toefl" {...register("toefl")} />
               </label>
               <br />
-              <input type={"submit"} style={{ backgroundColor: "#a1eafb" }} />
+              <input
+                type={"submit"}
+                style={{
+                  background: "#023753",
+                  width: "10vw",
+                  alignSelf: "center",
+                  color: "white",
+                }}
+              />
             </form>
           </div>
         </aside>
+        <h2
+          style={{
+            alignSelf: "center",
+            paddingLeft: hPadding,
+            paddingTop: "2vh ",
+            textAlign: "center",
+            display: "flex",
+            color: "darkslategray",
+            fontFamily: "Garamond",
+          }}
+        >
+          <img
+            src={img}
+            width="35px"
+            height="25px"
+            style={{ marginRight: "1vw" }}
+          ></img>
+          {heading}
+        </h2>
         <div>
           <table>
             {universities.map((item, index) => (
