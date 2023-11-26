@@ -18,7 +18,9 @@ function Univ(props) {
         <td className="ulist-r" style={{ width: "4rem" }}>
           {props.item.rating}
         </td>
-        <td className="ulist-r">{props.item.tutionfee} ($)</td>
+        <td className="ulist-r" style={{ width: "7rem" }}>
+          {props.item.tutionfee} ($)
+        </td>
       </tr>
     </>
   );

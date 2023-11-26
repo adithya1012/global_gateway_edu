@@ -19,7 +19,7 @@ function Recommendation() {
   const [hPadding, setHPadding] = useState("13vw");
   const [blur, setBlur] = useState("0px");
   let item = {
-    rank: "S.No",
+    rank: "Rank",
     universityname: "University Name",
     city: "City",
     rating: "Rating",
