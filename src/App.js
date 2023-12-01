@@ -35,6 +35,13 @@ const App = () => {
           <Route path="/login" element={<LoginBody />} />
           <Route path="/greService" element={<PrivateRoute element={<GreService />} path="/greService" />} />
           {/* Other routes */}
+          <Route path="/events" element={<Events />} />
+          <Route path="/Alumni" element={<Alumni />} />
+          <Route path="/Finance" element={<Finance />} />
+          <Route path="/recom" element={<Recommendation />} />
+          <Route path="/SOP" element={<SOP />} />
+          <Route path="/lorService" element={<LorService />} />
+          <Route path="/Resume" element={<Resume />} />
         </Routes>
       </Router>
       <Footer />

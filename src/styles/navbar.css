@@ -6,7 +6,7 @@
   box-shadow: 0 0 32px #0003;
   font-size: 1em;
   font-weight: 500;
-  --items: 5;
+  --items: 4;
 }
 .nav-links > a {
   color: rgb(27, 31, 36);

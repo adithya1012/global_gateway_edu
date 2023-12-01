@@ -1,5 +1,6 @@
 const express = require("express");
 const userModel = require("./models");
+const univModel = require("./universityModel");
 const userModel_signup = require("./models_signup");
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
@@ -59,11 +60,30 @@ app.post("/add_user", async (request, response) => {
   }
 });
 
+app.post("/university", async (request, response) => {
+  const university = request.body.data;
+  const query = {
+    degree: university.degree,
+    major: university.major,
+    gpa: { $lte: university.gpa },
+    gre: { $lte: university.gre },
+    tutionfee: { $lte: university.tutionfee },
+    toefl: { $lte: university.toefl },
+  };
+  const result = await univModel.find(query);
+  console.log(result);
+  try {
+    response.send(result);
+  } catch (error) {
+    response.status(500).send(error);
+  }
+});
+
 app.post("/add_user_detail", async (req, res) => {
   const { name, email, password } = req.body;
-  console.log(name)
-  console.log(email)
-  console.log(password)
+  console.log(name);
+  console.log(email);
+  console.log(password);
   try {
     // removing the password hasing from here as we are doing in middlewear.
     
@@ -87,7 +107,7 @@ app.post("/add_user_detail", async (req, res) => {
   }
 });
 
-app.post("/Login_user", (req,res) => {
+app.post("/Login_user", (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
   userModel_signup.findOne({email:email})
@@ -109,16 +129,7 @@ app.post("/Login_user", (req,res) => {
       }else{
           res.json("No record existed");
       }
-  })
-})
+    })
+  });
 
-app.get("/users", async (request, response) => {
-  const users = await userModel.find({});
-
-  try {
-    response.send(users);
-  } catch (error) {
-    response.status(500).send(error);
-  }
-});
 module.exports = app;

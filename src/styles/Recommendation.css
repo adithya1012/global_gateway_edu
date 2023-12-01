@@ -5,15 +5,20 @@
   align-items: center;
 } */
 
-.App {
+.univ-form {
   text-align: center;
   display: flex;
   flex-direction: column;
   margin: auto;
-  width: 20vw;
+  width: 21vw;
   padding: 1vw 0.5vw;
-  background-color: rgba(240, 210, 76, 0.32);
-  border-radius: 0 0 10px 10px;
+  background: rgb(230, 207, 107);
+  background: linear-gradient(
+    177deg,
+    rgba(230, 207, 107, 0.2191001400560224) 50%,
+    rgba(24, 125, 122, 0.5440301120448179) 100%
+  );
+  border-radius: 10px 10px 10px 10px;
 }
 
 input {
