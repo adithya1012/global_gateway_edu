@@ -25,16 +25,16 @@ const handleErrors = (err) => {
   }
 
   // validation errors
-  if (err.message.includes('user validation failed')) {
-    // console.log(err);
+  if (err.message.includes('User_data validation failed')) {
     Object.values(err.errors).forEach(({ properties }) => {
       // console.log(val);
-      // console.log(properties);
       errors[properties.path] = properties.message;
     });
   }
-
-  return errors;
+  const message = Object.values(errors)
+  .filter(value => value !== '')
+  .join(', ');
+  return message;
 }
 
 // create json web token
@@ -69,7 +69,6 @@ app.post("/add_user_detail", async (req, res) => {
     
     const user = await userModel_signup.create({name, email, password});
     const token = createToken(user._id);
-    console.log("HELOOOO ALLLLLL");
     res.cookie("jwt", token, {
       httpOnly: false,
       // secure: process.env.NODE_ENV === "production",
@@ -83,7 +82,7 @@ app.post("/add_user_detail", async (req, res) => {
     
   } catch (err) {
     const errors = handleErrors(err);
-    console.log(err);
+    console.log(errors);
     res.status(400).json({ errors });
   }
 });

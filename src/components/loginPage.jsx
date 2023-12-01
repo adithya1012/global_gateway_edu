@@ -53,7 +53,7 @@ const LoginBody = () => {
     }
       )
         .then((response) => {
-          console.warn(response.data);
+          // console.warn(response.data);
           alert("Data saved successfully");
           setName("");
           setEmail("");
@@ -61,7 +61,8 @@ const LoginBody = () => {
           navigate('/');
         })
         .catch((error) => {
-          console.error("Error:", error);
+          console.error("Error:", error); 
+          alert(error.response.data.errors);
         });
     };
     const componentIsMounted = useRef(true);
