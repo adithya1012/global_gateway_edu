@@ -38,7 +38,6 @@ function App() {
           <Route path="/SOP" element={<SOP />} />
           <Route path="/lorService" element={<LorService />} />
           <Route path="/Resume" element={<Resume />} />
-
         </Routes>
       </Router>
       <Footer />
