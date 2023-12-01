@@ -1,7 +1,29 @@
-import React from "react";
+import React, {useState} from "react";
 import "../styles/Resume.css";
+import Axios from "axios"
 
-function Resume(){
+const Resume=()=>{
+const [name, setName]=useState('');
+const [email,setEmail]=useState('');
+const [mobilenumber,setMobilenumber]=useState('');
+
+const handleClick = () => {
+    Axios.post("http://localhost:8000/add_userresume_appointment", {
+      name:name,
+      email:email,
+      mobilenumber:mobilenumber,
+    })
+      .then((response) => {
+        console.warn(response.data);
+        alert("Appointment confirmed. We'll discuss details via WhatsApp. Thank you.");
+        setName("");
+        setEmail("");
+        setMobilenumber("");
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  };
 
     return(
         <>
@@ -21,14 +43,16 @@ function Resume(){
         <p>Now, we can help you craft the perfect resume that is coherent with your profile. Increase your chances of gaining admission, internships, assistantships, and employment.</p>
        <br /><br /></div>
       
-       <div  class="cards">
+       <form  class="cards" method="post" onSubmit={(e) => {e.preventDefault()}}>
          <h3 align="center">Schedule an Appointment</h3>
        
         <p>Not sure if we can help you? Interested in Learning more about the service over a free 5 minute WhatsApp session with us?</p>
-        <label for="preferdate">Preferred Date : </label>
-        <input placeholder="Preferred date" class="date" type="date" /><br /><br />
-        <label for="mobilenum">Mobile Number : </label>
-        <input placeholder="Mobile Number" class="mobilenum" type="text" /><br /><br />
+        <label for="name">Name : </label>
+        <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)}/><br /><br />
+        <label for="email">E-Mail : </label>
+        <input type="email" placeholder="E-mail ID" value={email} onChange={(e) => setEmail(e.target.value)}/><br /><br />
+        <label for="mobilenumber">Mobile Number : </label>
+        <input type="number" placeholder="Mobile Number" value={mobilenumber} onChange={(e) => setMobilenumber(e.target.value)}/><br /><br />
         <label for="doubts">Doubts regarding : </label>
         <select name="doubts" id="doubts">
          <option value="sop"> Drafting Statement of Purpose</option>
@@ -37,8 +61,8 @@ function Resume(){
          <option value="visa">Visa Application Help</option>
          <option value="Resume">Resume Drafting</option>
         </select><br /><br />
-        <input type="button" value="Book Now" id="booknow" />
-       </div>
+        <button onClick={handleClick} id="booknow">Submit</button>
+       </form>
     </body>
     
         </>

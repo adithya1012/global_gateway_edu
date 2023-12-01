@@ -1,7 +1,7 @@
 import React, { Component,useRef, useState } from "react";
 import "../styles/login.css"
 import Axios from "axios";
-
+import { useNavigate } from 'react-router-dom';
 
 // const wrapper = document.querySelector('.wrapper');
 // const loginlink = document.querySelector(".login-link");
@@ -18,29 +18,80 @@ import Axios from "axios";
 
 
 const LoginBody = () => {
+    const navigate = useNavigate();
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [pwd, setPwd] = useState("");
 
+    // const signinHandle = () => {
+    //   Axios.post("http://localhost:8000/add_user_detail", {
+    //     name: name,
+    //     email: email,
+    //     password: pwd,
+    //   })
+    //     .then((response) => {
+    //       console.warn(response.data);
+    //       alert("Data saved successfully");
+    //       setName("");
+    //       setEmail("");
+    //       setPwd("");
+    //     })
+    //     .catch((error) => {
+    //       console.error("Error:", error);
+    //     });
+    // };
+    const postData = {        
+      name: name,
+      email: email,
+      password: pwd
+    }
+
     const signinHandle = () => {
-      Axios.post("http://localhost:8000/add_user_detail", {
-        name: name,
-        email: email,
-        password: pwd,
-      })
+      Axios.post("http://localhost:8000/add_user_detail", postData,{
+      withCredentials : true, //without this we are not able to set the cookies for jwt token
+    }
+      )
         .then((response) => {
-          console.warn(response.data);
+          // console.warn(response.data);
           alert("Data saved successfully");
           setName("");
           setEmail("");
           setPwd("");
+          navigate('/');
         })
         .catch((error) => {
-          console.error("Error:", error);
+          console.error("Error:", error); 
+          alert(error.response.data.errors);
         });
     };
+    const componentIsMounted = useRef(true);
 
+// useEffect(() => {
+//   return () => {
+//     // Component is unmounting
+//     componentIsMounted.current = false;
+//   };
+// }, []);
+    // const signinHandle = async () => {
+    //   try {
+    //     const response = await Axios.post("http://localhost:8000/add_user_detail", {
+    //       name: name,
+    //       email: email,
+    //       password: pwd,
+    //     });
+    
+    //     if (componentIsMounted.current) {
+    //       console.warn(response.data);
+    //       alert("Data saved successfully");
+    //       setName("");
+    //       setEmail("");
+    //       setPwd("");
+    //     }
+    //   } catch (error) {
+    //     console.error("Error:", error);
+    //   }
+    // };
     const LoginHandle = async (e) => {
       e.preventDefault();
       try {
@@ -49,13 +100,12 @@ const LoginBody = () => {
           // name: name,
           email: email,
           password: pwd,
-        });
-  
+        }, {withCredentials : true});
         // Handle the response accordingly
         console.log(response.data); // Assuming the server returns a response
         if (response.data === "Success") {
           alert("User Authentication successful")
-          // props.value("Home");
+          navigate('/');
         }
         else {
           alert("Username/Password is incorrect. Please try again !")
