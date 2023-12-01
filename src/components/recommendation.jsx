@@ -26,7 +26,7 @@ function Recommendation() {
     tutionfee: "Tution Fee",
   };
   const onSubmit = async (data) => {
-    let result = await Axios.post("http://localhost:8001/university", {
+    let result = await Axios.post("http://localhost:8000/university", {
       data: data,
     });
     const dataArray = Object.values(result.data);
