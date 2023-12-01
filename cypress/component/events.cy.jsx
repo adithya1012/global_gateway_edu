@@ -1,5 +1,3 @@
-// cypress/integration/events.spec.js
-
 import React from 'react';
 import Events from '../../src/components/events'; // Update the path accordingly
 

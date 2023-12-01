@@ -1,5 +1,5 @@
 import React from 'react';
-import UniversityListItem from '../../src/components/universityListItem'; // Adjust the path accordingly
+import UniversityListItem from '../../src/components/universityListItem';
 
 describe('University List Item Component', () => {
   it('renders University List Item with provided props', () => {

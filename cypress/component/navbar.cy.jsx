@@ -1,4 +1,3 @@
-// Assuming your Navbar component is in a file named Navbar.jsx
 import React from 'react';
 import Navbar from '../../src/components/navbar.jsx';  
 

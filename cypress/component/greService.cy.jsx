@@ -11,8 +11,6 @@ describe('GreService Component', () => {
 
     // Check if the "Shedule an Appointment" section exists
     cy.get('.greSevice_shedule').should('exist');
-
-    // Additional checks or assertions as needed
   });
 
   it('can input appointment details', () => {

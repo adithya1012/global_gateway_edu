@@ -1,5 +1,5 @@
 import React from 'react';
-import Footer from '../../src/components/footer.jsx'; // Update the path accordingly
+import Footer from '../../src/components/footer.jsx'; 
 
 describe('Footer Component', () => {
   it('renders without errors', () => {
@@ -37,7 +37,7 @@ describe('Footer Component', () => {
     cy.mount(<Footer />);
     
     // Check if there is a link to the privacy policy
-    cy.get('.info-links a[href="#"]').should('exist'); // Replace '#' with the actual URL
+    cy.get('.info-links a[href="#"]').should('exist'); 
   });
 
   it('contains terms of use link', () => {
@@ -45,7 +45,7 @@ describe('Footer Component', () => {
     cy.mount(<Footer />);
     
     // Check if there is a link to the terms of use
-    cy.get('.info-links a[href="#"]').should('exist'); // Replace '#' with the actual URL
+    cy.get('.info-links a[href="#"]').should('exist'); 
   });
 
   it('contains help link', () => {
@@ -53,6 +53,6 @@ describe('Footer Component', () => {
     cy.mount(<Footer />);
     
     // Check if there is a link to the help section
-    cy.get('.info-links a[href="#"]').should('exist'); // Replace '#' with the actual URL
+    cy.get('.info-links a[href="#"]').should('exist'); 
   });
 });

@@ -41,9 +41,6 @@ describe('Resume Component', () => {
       expect(requestBody.name).to.equal('John Doe');
       expect(requestBody.email).to.equal('john@example.com');
       expect(requestBody.mobilenumber).to.equal('1234567890');
-      // Add more assertions based on your form structure
     });
-
-    // Add more assertions or checks based on your actual form submission behavior
   });
 });

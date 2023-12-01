@@ -1,5 +1,3 @@
-// cypress/integration/tileservice.cy.js
-
 import React from 'react';
 import TileService from '../../src/components/tileService.jsx';
 
@@ -32,9 +30,5 @@ describe('TileService Component', () => {
     // Wait for the URL to change
     cy.url().should('not.eq', initialUrl);
 
-    // Add more assertions or checks based on your navigation behavior
-    // For example, you can check if specific elements on the target page exist
   });
-
-  // Add more test cases as needed
 });

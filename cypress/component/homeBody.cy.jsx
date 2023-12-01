@@ -1,7 +1,5 @@
-// cypress/integration/homeBody.spec.js
-
 import React from 'react';
-import HomeBody from '../../src/components/homeBody'; // Update the path accordingly
+import HomeBody from '../../src/components/homeBody'; 
 
 describe('HomeBody Component', () => {
   beforeEach(() => {
@@ -19,7 +17,6 @@ describe('HomeBody Component', () => {
     // Check if the text content container exists
     cy.get('.homebody-aside-text').should('exist');
 
-    // Additional checks or assertions as needed
   });
 
   it('displays correct introductory text', () => {
@@ -28,14 +25,10 @@ describe('HomeBody Component', () => {
       'contain',
       'Studying abroad is like opening a book to pages you\'ve never imagined, with each chapter filled with adventure, knowledge, and personal growth.'
     );
-
-    // Additional checks or assertions as needed
   });
 
   it('renders the "GET STARTED" button', () => {
     // Check if the "GET STARTED" button is present
     cy.get('.get-started').should('exist');
-
-    // Additional checks or assertions as needed
   });
 });

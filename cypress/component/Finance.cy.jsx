@@ -17,13 +17,11 @@ describe('Finance Component', () => {
 
     it('renders without errors', () => {
       cy.mount(<Finance />);
-      // Assuming the Finance component renders without any errors
     });
   
     it('displays bank images', () => {
       cy.mount(<Finance />);
       // Assuming there are images with specific IDs or classes for each bank
-      // You can customize this based on your actual implementation
       cy.get('.bank img').should('have.length', 4); // Assuming there are 4 bank images
     });
 });
