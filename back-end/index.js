@@ -7,9 +7,6 @@ const app = express();
 app.use(express.json());
 //Database
  
-
-
-
 const database = (module.exports = () => {
   const connectionParams = {
     useNewUrlParser: true,
@@ -37,3 +34,4 @@ app.use(Router);
 app.listen(8000, () => {
   console.log("server is running");
 });
+module.exports = app;
