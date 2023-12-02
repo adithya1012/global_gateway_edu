@@ -15,7 +15,7 @@ class HomeBody extends Component {
                 height="400"
               />
             </aside>
-            <p className="homebody-asside-text">
+            <p className="homebody-aside-text">
               <em>
                 "Studying abroad is like opening a book to pages you've never
                 imagined, with each chapter filled with adventure, knowledge,
