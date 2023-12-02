@@ -12,6 +12,12 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
+      - name: Run Cypress Open
+        run: npx cypress open
+
+      # Wait for the Cypress open process to complete
+      - name: Wait for Cypress to Open
+        run: sleep 10
 
       - name: Cypress run
         uses: cypress-io/github-action@v4
