@@ -21,12 +21,6 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Run Cypress Open
-        run: npx cypress open
-
-      # Wait for the Cypress open process to complete
-      - name: Wait for Cypress to Open
-        run: sleep 10
 
       - name: Run Cypress Tests
-        run: npx cypress run
+        run: cypress-io/github-action@v4
