@@ -66,13 +66,13 @@ function Events() {
         </div>
         <br />
         <div className="ev-div">
-          <Router>
+       
           <div className="grid-container">
             {cardData.map((card, index) => (
               <Card key={index} {...card} />
             ))}
           </div>
-          </Router>
+          
         </div>
       </body>
     </>

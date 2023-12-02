@@ -2,7 +2,7 @@ import React, { Component,useRef, useState } from "react";
 import "../styles/login.css"
 import Axios from "axios";
 import { useNavigate } from 'react-router-dom';
-
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // const wrapper = document.querySelector('.wrapper');
 // const loginlink = document.querySelector(".login-link");
 // const registerlink = document.querySelector(".register-link");

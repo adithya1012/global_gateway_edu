@@ -77,13 +77,13 @@ function Card({ title, text, clink }) {
 class TileService extends Component {
   render() {
     return (
-    <Router>
-    <div className="grid-container">
-      {cardData.map((card, index) => (
-        <Card key={index} {...card} />
-      ))}
-    </div>
-    </Router>
+
+  <div className="grid-container">
+    {cardData.map((card, index) => (
+      <Card key={index} {...card} />
+    ))}
+  </div>
+  
     );
   }
 }
