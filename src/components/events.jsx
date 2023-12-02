@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "../styles/tileservice.css";
 import "../styles/events.css";
 import { useNavigate } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 const cardData = [
   {
