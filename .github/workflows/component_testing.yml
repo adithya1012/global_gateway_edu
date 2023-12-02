@@ -17,4 +17,4 @@ jobs:
 
 
       - name: Run Cypress Tests
-        run: cypress-io/github-action@v4
+        run: cypress-io/github-action@v2
