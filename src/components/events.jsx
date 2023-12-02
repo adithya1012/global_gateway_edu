@@ -29,7 +29,7 @@ const cardData = [
 
 function Card({ name, img, description, evlink }) {
   const navigate = useNavigate();
-  const handleCardClick = (evlink) => {
+  const handleCardClick = () => {
     navigate(evlink);
     console.log(evlink);
   };
