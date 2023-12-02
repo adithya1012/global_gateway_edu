@@ -6,6 +6,15 @@ import Navbar from "./navbar";
 const UniversityListBody = () => {
   const [course, setCourse] = useState([
     {
+      id: 0,
+      rank: 1,
+      name: "Major",
+      universityname: "University Name",
+      city: "City",
+      rating: "Rating",
+      code: "",
+    },
+    {
       id: 1,
       rank: 1,
       name: "MS in Computer Science",

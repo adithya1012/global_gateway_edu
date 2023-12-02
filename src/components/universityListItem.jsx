@@ -4,8 +4,9 @@ function UniversityListItem(props) {
   return (
     <>
       <tr className="UL-item">
-        <td className="ulist">{props.c.rank}</td>
-        <td className="ulist">{props.c.name}</td>
+        <td className="ulist" style={{ width: "20rem" }}>
+          {props.c.name}
+        </td>
         <td className="ulist" style={{ width: "20rem" }}>
           {props.c.universityname}
         </td>
