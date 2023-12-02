@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../styles/tileservice.css";
 import { useNavigate } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 const cardData = [
   {
@@ -76,13 +77,17 @@ function Card({ title, text, clink }) {
 class TileService extends Component {
   render() {
     return (
-      <div className="grid-container">
-        {cardData.map((card, index) => (
-          <Card key={index} {...card} />
-        ))}
-      </div>
+    <Router>
+    <div className="grid-container">
+      {cardData.map((card, index) => (
+        <Card key={index} {...card} />
+      ))}
+    </div>
+    </Router>
     );
   }
 }
+
+
 
 export default TileService;
