@@ -1,4 +1,4 @@
-name: Cypress Tests
+name: Cypress Component Tests
 
 on:
   push:
@@ -6,14 +6,22 @@ on:
       - UnitTesting
 
 jobs:
-  cypress-tests:
+  test:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14
 
+      - name: Install Dependencies
+        run: npm install
 
-      - name: Cypress run
-        uses: cypress-io/github-action@v4
+      - name: Run Cypress Component Tests
+        uses: cypress-io/github-action@v2
+        with:
+          build: npm run build  # adjust this based on your project's build script
