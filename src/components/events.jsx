@@ -42,7 +42,7 @@ function Card({ name, img, description, evlink }) {
         // onClick={() => {
         //   handleCardClick(evlink);
         // }}
-      >
+        onClick={handleCardClick}>
         <img src={img} style={{ width: "inherit" }}></img>
         <div className="card-body">
           <h5 className="card-title">{name}</h5>
