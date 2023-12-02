@@ -138,4 +138,31 @@ app.get("/users", async (request, response) => {
     response.status(500).send(error);
   }
 });
+
+app.delete("/delete_user", (req, res) => {
+  const email = req.body.email;
+  console.log("************")
+  console.log(req.body)
+  console.log("************")
+  userModel_signup.findOne({ email: email })
+    .then(async user => {
+      if (user) {
+        // Code to delete the record in the db
+        userModel_signup.deleteOne({ email: email })
+          .then(() => {
+            res.json("Record deleted successfully");
+          })
+          .catch(error => {
+            res.status(500).json("Error deleting record: " + error.message);
+          });
+      } else {
+        res.json("No record existed");
+      }
+    })
+    .catch(error => {
+      res.status(500).json("Error finding user: " + error.message);
+    });
+});
+
+
 module.exports = app;
