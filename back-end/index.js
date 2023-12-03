@@ -37,13 +37,13 @@ const database = (module.exports = () => {
   }
 });
 database();
-// app.use(cors());
-const corsOptions = {
-  origin: "https://gge-backend-d39f1c8e20e5.herokuapp.com/", // Replace this port with the frontend port when we place in Heroku platform.
-  credentials: true, // this is required to store the cookies. Cross-Origin Resource Sharing for node.
-};
+app.use(cors());
+// const corsOptions = {
+//   origin: "https://gge-backend-d39f1c8e20e5.herokuapp.com/", // Replace this port with the frontend port when we place in Heroku platform.
+//   credentials: true, // this is required to store the cookies. Cross-Origin Resource Sharing for node.
+// };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 app.use(Router);
 const PORT = process.env.PORT || 8000;
 console.log("+++++++PORT NUMBER+++++");
