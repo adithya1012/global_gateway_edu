@@ -2,6 +2,7 @@ const express = require("express");
 const userModel = require("./models");
 const univModel = require("./universityModel");
 const userModel_signup = require("./models_signup");
+const userModel_scheduleappointment = require("./models_scheduleappointment");
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 // const cors = require('cors');
@@ -59,7 +60,78 @@ app.post("/add_user", async (request, response) => {
     response.status(500).send(error);
   }
 });
+app.post("/add_user_appointment", async (request, response) => {
+  // const user = new userModel_scheduleappointment(request.body);
+  const { name, email, mobilenumber } = request.body;
+  console.log(name);
+  console.log(email);
+  console.log(mobilenumber);
 
+  try {
+    const user = new userModel_scheduleappointment({ name, email, mobilenumber});
+    await user.save();
+    response.send(user);
+    console.log(user);
+  } catch (error) {
+    console.error("Error:", error);
+    response.status(500).send(error);
+  }
+});
+
+app.post("/add_usersop_appointment", async (request, response) => {
+  // const user = new userModel_scheduleappointment(request.body);
+  const { name, email, mobilenumber } = request.body;
+  console.log(name);
+  console.log(email);
+  console.log(mobilenumber);
+
+  try {
+    const user = new userModel_scheduleappointment({ name, email, mobilenumber});
+    await user.save();
+    response.send(user);
+    console.log(user);
+  } catch (error) {
+    console.error("Error:", error);
+    response.status(500).send(error);
+  }
+});
+
+app.post("/add_userlor_appointment", async (request, response) => {
+  // const user = new userModel_scheduleappointment(request.body);
+  const { name, email, mobilenumber } = request.body;
+  console.log(name);
+  console.log(email);
+  console.log(mobilenumber);
+
+  try {
+    const user = new userModel_scheduleappointment({ name, email, mobilenumber});
+    await user.save();
+    response.send(user);
+    console.log(user);
+  } catch (error) {
+    console.error("Error:", error);
+    response.status(500).send(error);
+  }
+});
+
+app.post("/add_userresume_appointment", async (request, response) => {
+  // const user = new userModel_scheduleappointment(request.body);
+  console.log(request.body)
+  const { name, email, mobilenumber } = request.body;
+  console.log(name);
+  console.log(email);
+  console.log(mobilenumber);
+
+  try {
+    const user = new userModel_scheduleappointment({ name, email, mobilenumber});
+    await user.save();
+    response.send(user);
+    console.log(user);
+  } catch (error) {
+    console.error("Error:", error);
+    response.status(500).send(error);
+  }
+});
 app.post("/university", async (request, response) => {
   const university = request.body.data;
   const query = {
