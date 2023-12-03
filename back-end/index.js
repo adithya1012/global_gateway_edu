@@ -39,7 +39,7 @@ const database = (module.exports = () => {
 database();
 // app.use(cors());
 const corsOptions = {
-  origin: "https://gge-app-d39f1c8e20e5.herokuapp.com/", // Replace this port with the frontend port when we place in Heroku platform.
+  origin: "https://gge-backend-d39f1c8e20e5.herokuapp.com/", // Replace this port with the frontend port when we place in Heroku platform.
   credentials: true, // this is required to store the cookies. Cross-Origin Resource Sharing for node.
 };
 
