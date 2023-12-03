@@ -3,6 +3,7 @@ const userModel = require("./models");
 const univModel = require("./universityModel");
 const userModel_signup = require("./models_signup");
 const userModel_scheduleappointment = require("./models_scheduleappointment");
+const path = require("path");
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 // const cors = require('cors');
@@ -14,6 +15,8 @@ const bcrypt= require('bcrypt');
 // const path = require('path');
 // const fs = require('fs');
 console.log(__dirname);
+const path_val = path.join(__dirname, "../src/index.js");
+console.log(path_val);
 console.log("$$$$$$$$$$$$$$$$$");
 const app = express();
 
