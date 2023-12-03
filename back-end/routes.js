@@ -134,6 +134,7 @@ app.post("/add_userresume_appointment", async (request, response) => {
   }
 });
 app.post("/university", async (request, response) => {
+  console.log("THE UNIVERSITY REC CALL");
   const university = request.body.data;
   const query = {
     degree: university.degree,
