@@ -41,7 +41,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 app.use(Router);
-const PORT = process.env.PORT || 8000;
+const PORT = 8000;
 console.log("+++++++PORT NUMBER+++++");
 console.log(PORT);
 app.listen(PORT, () => {
