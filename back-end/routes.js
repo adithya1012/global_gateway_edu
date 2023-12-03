@@ -22,12 +22,13 @@ const handleErrors = (err) => {
 
   // duplicate email error
   if (err.code === 11000) {
-    errors.email = 'that email is already registered';
-    return errors;
+    const message = 'The email is already registered';
+    return message;
   }
 
   // validation errors
-  if (err.message.includes('User_data validation failed')) {
+  console.log(err.message);
+  if (err.message.includes('User_data1 validation failed')) {
     Object.values(err.errors).forEach(({ properties }) => {
       // console.log(val);
       errors[properties.path] = properties.message;
@@ -43,8 +44,8 @@ const handleErrors = (err) => {
 const maxAge = 3 * 24 * 60 * 60;
 const createToken = (id) => {
   console.log(id);
-  const token = jwt.sign({ id }, process.env.ACCESS_TOKEN_SECRET, {
-    // const token = jwt.sign({ id }, "accesstoken", {
+  // const token = jwt.sign({ id }, process.env.ACCESS_TOKEN_SECRET, {
+    const token = jwt.sign({ id }, "accesstoken", {
     expiresIn: maxAge,
   });
   console.log(token);
