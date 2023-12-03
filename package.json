@@ -34,11 +34,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
-    "client": "cd client && npm start",
-    "server": "nodemon back-end/index.js",
+    "client": "npm start",
+    "server": "node back-end/index.js",
     "test": "mocha",
     "dev": "concurrently --kill-others \"npm run client\" \"npm run server\"",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "heroku-postbuild": "npm install && npm run build"
   },
   "browserslist": {
     "production": [
