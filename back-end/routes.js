@@ -162,7 +162,7 @@ app.get("/university", (request, response) => {
   console.log(path_val);
   console.log(__dirname);
   console.log("blhblhblhblh");
-  console.log(ls);
+  // console.log(ls);
   console.log("HELLOOOOO");
   response.send("HELLOOOOO");
 });
