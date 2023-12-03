@@ -13,7 +13,8 @@ const bcrypt= require('bcrypt');
 // const multer = require('multer');
 // const path = require('path');
 // const fs = require('fs');
-
+console.log(__dirname);
+console.log("$$$$$$$$$$$$$$$$$");
 const app = express();
 
 const handleErrors = (err) => {
@@ -154,9 +155,18 @@ app.post("/university", async (request, response) => {
 });
 
 app.get("/university", async (request, response) => {
+  res.send("HELLLOOOOOOO");
+});
 
-    response.send("HELOOOOOOO");
-
+app.get("/*", function(req, res) {
+  res.sendFile(
+    path.join(__dirname, "../src/index.js"),
+    function(err) {
+      if (err) {
+        res.status(500).send(err);
+      }
+    }
+  )
 });
 
 app.post("/add_user_detail", async (req, res) => {
