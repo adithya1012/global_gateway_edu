@@ -167,17 +167,17 @@ app.get("/university", (request, response) => {
   response.send("HELLOOOOO");
 });
 
-app.get("/*", function(req, res) {
-  res.sendFile(
-    path.join(__dirname, "../src/index.html"),
-    function(err) {
-      if (err) {
-        console.log(err);
-        res.status(500).send(err);
-      }
-    }
-  )
-});
+// app.get("/*", function(req, res) {
+//   res.sendFile(
+//     path.join(__dirname, "../src/index.html"),
+//     function(err) {
+//       if (err) {
+//         console.log(err);
+//         res.status(500).send(err);
+//       }
+//     }
+//   )
+// });
 
 app.post("/add_user_detail", async (req, res) => {
   const { name, email, password } = req.body;
