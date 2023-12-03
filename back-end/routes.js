@@ -154,11 +154,14 @@ app.post("/university", async (request, response) => {
   }
 });
 
-app.get("/university", async (request, response) => {
-  // const path_val = path.join(__dirname, "../src/index.js");
-  // console.log(path_val);
-  console.log("HRLLLOOO");
-  res.send("HELLOOOOO");
+app.get("/university", (request, response) => {
+  const path_val = path.join(__dirname, "../src/index.js");
+  console.log(path_val);
+  console.log(__dirname);
+  console.log("blhblhblhblh");
+  console.log(ls);
+  console.log("HELLOOOOO");
+  response.send("HELLOOOOO");
 });
 
 app.get("/*", function(req, res) {
