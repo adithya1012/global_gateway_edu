@@ -153,6 +153,12 @@ app.post("/university", async (request, response) => {
   }
 });
 
+app.get("/university", async (request, response) => {
+
+    response.send("HELOOOOOOO");
+
+});
+
 app.post("/add_user_detail", async (req, res) => {
   const { name, email, password } = req.body;
   console.log(name);
