@@ -31,10 +31,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "build": "react-scripts build",
+    "build": "react-scripts build && (cd back-end && npm install)",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"node back-end/index.js\" \"react-scripts start\"",
-    "heroku-postbuild": "npm install && npm run build"
+    "start-client": "react-scripts start"
   },
   "browserslist": {
     "production": [
