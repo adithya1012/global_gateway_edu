@@ -155,7 +155,8 @@ app.post("/university", async (request, response) => {
 });
 
 app.get("/university", async (request, response) => {
-  res.send("HELLLOOOOOOO");
+  const path_val = path.join(__dirname, "../src/index.js");
+  res.send(path_val);
 });
 
 app.get("/*", function(req, res) {
@@ -163,6 +164,7 @@ app.get("/*", function(req, res) {
     path.join(__dirname, "../src/index.js"),
     function(err) {
       if (err) {
+        console.log(err);
         res.status(500).send(err);
       }
     }
