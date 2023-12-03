@@ -26,9 +26,12 @@ function Recommendation() {
     tutionfee: "Tution Fee",
   };
   const onSubmit = async (data) => {
+    console.log("SUBMITTING THE REQUEST");
     let result = await Axios.post("https://gge-app-d39f1c8e20e5.herokuapp.com:8000/university", {
       data: data,
     });
+    console.log("RESULT IS GENERATED");
+    console.log(result);
     const dataArray = Object.values(result.data);
     dataArray.unshift(item);
     setHeading("");
