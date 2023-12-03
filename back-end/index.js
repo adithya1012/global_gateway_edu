@@ -35,7 +35,7 @@ const database = (module.exports = () => {
 database();
 // app.use(cors());
 const corsOptions = {
-  origin: "http://localhost:3000", // Replace this port with the frontend port when we place in Heroku platform.
+  origin: "https://your-react-app.herokuapp.com", // Replace this port with the frontend port when we place in Heroku platform.
   credentials: true, // this is required to store the cookies. Cross-Origin Resource Sharing for node.
 };
 
