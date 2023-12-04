@@ -22,7 +22,10 @@ const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch
 // const path = require('path');
 // const fs = require('fs');
  
-
+const formData = require('form-data');
+const Mailgun = require('mailgun.js');
+const mailgun = new Mailgun(formData);
+const mg = mailgun.client({username: 'api', key: process.env.MAILGUN_API_KEY || 'e0a97ecce36200a8b762a9cec2b5e654-30b58138-b2ec0581'});
  
 const app = express();
 
@@ -60,6 +63,28 @@ async function run_send_message(mobilenumber) {
   console.log(error);
 }
 }
+
+async function run_send_email(email) {
+  try{
+    
+     
+    mg.messages.create('sandboxb36c996a36664a2db7b2c280916f5648.mailgun.org', {
+        from: "Excited User <mailgun@ssandboxb36c996a36664a2db7b2c280916f5648.mailgun.org>",
+        to: [email],
+        subject: "Appointment confirmation from GGE",
+        text: "Your Appointment is confirmed with the GGE expert on 07 December 2024 at 11am. following is the URL to join the call: https://meet.google.com/tju-acvw-onn",
+        html: "<h1>Appointment Confirmation From GGE </h1>"
+    })
+    .then(msg => console.log(msg)) // logs response data
+    .catch(err => console.log(err)); // logs any error
+
+  } catch (error) {
+    // response.status(500).send(error);
+    console.error("Error while sending an email")
+    console.log(error);
+  }
+};
+
 const handleErrors = (err) => {
   console.log(err.message, err.code);
   let errors = { email: '', password: '' };
@@ -115,7 +140,8 @@ app.post("/add_user_appointment", async (request, response) => {
   try {
     const user = new userModel_scheduleappointment({ name, email, mobilenumber});
     await user.save();
-    run_send_message(mobilenumber)
+    run_send_message(mobilenumber);
+    run_send_email(email);
     response.send(user);
     console.log(user);
   } catch (error) {
@@ -134,7 +160,8 @@ app.post("/add_usersop_appointment", async (request, response) => {
   try {
     const user = new userModel_scheduleappointment({ name, email, mobilenumber});
     await user.save();
-    run_send_message(mobilenumber)
+    run_send_message(mobilenumber);
+    run_send_email(email);
     response.send(user);
     console.log(user);
   } catch (error) {
@@ -153,7 +180,8 @@ app.post("/add_userlor_appointment", async (request, response) => {
   try {
     const user = new userModel_scheduleappointment({ name, email, mobilenumber});
     await user.save();
-    run_send_message(mobilenumber)
+    run_send_message(mobilenumber);
+    run_send_email(email);
     response.send(user);
     console.log(user);
   } catch (error) {
@@ -174,6 +202,7 @@ app.post("/add_userresume_appointment", async (request, response) => {
     const user = new userModel_scheduleappointment({ name, email, mobilenumber});
     await user.save();
     run_send_message(mobilenumber);
+    run_send_email(email);
     response.send(user);
     console.log(user);
   } catch (error) {
