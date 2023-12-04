@@ -43,6 +43,7 @@ const App = () => {
           <Route path="/SOP" element={<PrivateRoute element={<SOP />} path="/SOP" />} />
           <Route path="/lorService" element={<PrivateRoute element={<LorService />} path="/lorService" />} />
           <Route path="/Resume" element={<PrivateRoute element={<Resume />} path="/Resume" />} />
+          <Route path="/Visaprep" element={<PrivateRoute element={<Visaprep/>} path="/Resume" />}/>
         </Routes>
       </Router>
       <Footer />
