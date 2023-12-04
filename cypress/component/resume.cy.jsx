@@ -24,7 +24,7 @@ describe('Resume Component', () => {
 
   it('submits the form successfully', () => {
     // Stub the Axios post method
-    cy.intercept('POST', 'http://localhost:8000/add_userresume_appointment').as('submitAppointment');
+    cy.intercept('POST', 'https://gge-backend-a0b13257508d.herokuapp.com/add_userresume_appointment').as('submitAppointment');
 
     // Fill in the form
     cy.get('input[type="text"]').type('John Doe');
