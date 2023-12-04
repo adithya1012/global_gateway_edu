@@ -23,7 +23,7 @@ describe('LorService Component', () => {
 
   it('submits the form successfully', () => {
     // Mock the Axios post method
-    cy.intercept('POST', 'http://localhost:8000/add_userlor_appointment', {
+    cy.intercept('POST', 'https://gge-backend-a0b13257508d.herokuapp.com/add_userlor_appointment', {
       statusCode: 200,
       body: 'Mock data',
     }).as('submitAppointment');
