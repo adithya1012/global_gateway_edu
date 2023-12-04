@@ -14,7 +14,9 @@ import Recommendation from './components/recommendation';
 import SOP from './components/SOP';
 import LorService from './components/lorService';
 import Resume from './components/Resume';
+import Visaprep from "./components/Visaprep";
 import { isAuthenticated } from './auth';
+  
 
 const PrivateRoute = ({ element, path }) => {
   return isAuthenticated() ? (
@@ -42,6 +44,7 @@ const App = () => {
           <Route path="/SOP" element={<SOP />} />
           <Route path="/lorService" element={<LorService />} />
           <Route path="/Resume" element={<Resume />} />
+          <Route path="/Visaprep" element={<Visaprep/>}/>
         </Routes>
       </Router>
       <Footer />
