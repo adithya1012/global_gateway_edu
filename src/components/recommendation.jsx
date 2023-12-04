@@ -32,7 +32,9 @@ function Recommendation() {
     });
     console.log("RESULT IS GENERATED");
     console.log(result); 
-    const dataArray = Object.values(result.data);
+    // const dataArray = Object.values(result.data);
+    let dataArray = Object.values(result.data);
+    dataArray = dataArray.sort((a, b) => a.rank - b.rank);
     dataArray.unshift(item);
     setHeading("");
     setHPadding("2vw");

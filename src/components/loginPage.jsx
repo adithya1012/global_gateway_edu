@@ -60,6 +60,7 @@ const LoginBody = () => {
           setName("");
           setEmail("");
           setPwd("");
+          // window.localStorage.setItem('jwt', response.my_token);
           navigate('/');
         })
         .catch((error) => {
