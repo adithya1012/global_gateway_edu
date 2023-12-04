@@ -41,7 +41,7 @@ database();
 // app.use(cors());
 const corsOptions = {
   // origin: "http://localhost:3000", // Replace this port with the frontend port when we place in Heroku platform.
-  origin: `${serverConfig.backend_url}`,
+  origin: `${serverConfig.frontend_url}`,
   credentials: true, // this is required to store the cookies. Cross-Origin Resource Sharing for node.
 };
 
