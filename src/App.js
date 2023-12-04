@@ -14,7 +14,9 @@ import Recommendation from './components/recommendation';
 import SOP from './components/SOP';
 import LorService from './components/lorService';
 import Resume from './components/Resume';
+import Visaprep from "./components/Visaprep";
 import { isAuthenticated } from './auth';
+  
 
 const PrivateRoute = ({ element, path }) => {
   return isAuthenticated() ? (

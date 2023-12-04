@@ -21,7 +21,7 @@ const cardData = [
   {
     title: "Visa Preparation",
     text: "Easily navigate the visa application process with our comprehensive resources and expert guidance",
-    clink: "/greService",
+    clink: "/Visaprep",
   },
   {
     title: "Statement of Purpose",
