@@ -15,7 +15,7 @@ describe('SOP Component', () => {
 
   it('submits the form successfully', () => {
     // Stub the Axios post method
-    cy.intercept('POST', 'http://localhost:8000/add_usersop_appointment').as('submitAppointment');
+    cy.intercept('POST', 'https://gge-backend-a0b13257508d.herokuapp.com/add_usersop_appointment').as('submitAppointment');
 
     // Submit the form
     cy.get('button').click();
