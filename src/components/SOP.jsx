@@ -1,8 +1,31 @@
 import React from "react";
+import { useState } from "react";
 import "../styles/sop.css";
+import Axios from "axios"
 
-function SOP(){
+const SOP=()=>{
+const [name, setName]=useState('');
+const [email,setEmail]=useState('');
+const [mobilenumber,setMobilenumber]=useState('');
 
+const handleClick = () => {
+    Axios.post("http://localhost:8000/add_usersop_appointment", {
+      name:name,
+      email:email,
+      mobilenumber:mobilenumber,
+    })
+      .then((response) => {
+        console.warn(response.data);
+        alert("Appointment confirmed. We'll discuss details via WhatsApp. Thank you.");
+        setName("");
+        setEmail("");
+        setMobilenumber("");
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+      
+  };
     return(
         <>
     <body>
@@ -23,15 +46,17 @@ function SOP(){
         
         <p>This is going to change lives. The only question is, are you next? Good. Let's get you into your dream university!</p>
        </div>
-      
-       <div  class="cards">
+      <form method="post" class="cards" onSubmit={(e) => {e.preventDefault()}}>
+       <div class="sop">
          <h3 align="center">Schedule an Appointment</h3>
        
         <p>Not sure if we can help you? Interested in Learning more about the service over a free 5 minute WhatsApp session with us?</p>
-        <label for="preferdate">Preferred Date : </label>
-        <input placeholder="Preferred date" class="date" type="date" /><br /><br />
-        <label for="mobilenum">Mobile Number : </label>
-        <input placeholder="Mobile Number" class="mobilenum" type="text" /><br /><br />
+        <label for="name">Name : </label>
+        <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)}/><br /><br />
+        <label for="email">E-Mail : </label>
+        <input type="text" placeholder="E-mail ID" value={email} onChange={(e) => setEmail(e.target.value)}/><br /><br />
+        <label for="mobilenumber">Mobile Number : </label>
+        <input type="number" placeholder="Mobile Number" value={mobilenumber} onChange={(e) => setMobilenumber(e.target.value)}/><br /><br />
         <label for="doubts">Doubts regarding : </label>
         <select name="doubts" id="doubts">
          <option value="sop"> Drafting Statement of Purpose</option>
@@ -40,8 +65,9 @@ function SOP(){
          <option value="visa">Visa Application Help</option>
          <option value="Resume">Resume Drafting</option>
         </select><br /><br />
-        <input type="button" value="Book Now" id="booknow" />
-       </div>
+        <button onClick={handleClick}>Submit</button>
+        </div>
+       </form>
     </body>
     
         </>

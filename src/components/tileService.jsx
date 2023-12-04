@@ -16,7 +16,7 @@ const cardData = [
   {
     title: "University Recommendation",
     text: "Discover a brighter educational future with tailored university recommendations based on your interests, goals, and preferences",
-    clink: "/greService",
+    clink: "/recom",
   },
   {
     title: "Visa Preparation",

@@ -30,7 +30,7 @@ margin-top : 20px;
 width : 700px;
 }
 
-div.cards{
+.cards{
 width: 400px;
 
 box-shadow: 0 7px 10px 0 rgba(100, 110, 248, 0.2), 0 6px 20px 0 rgba(87, 160, 245, 0.19);
@@ -42,7 +42,7 @@ transform: translate(-50%, -50%);
 text-align: center;
 padding: 1.5rem;
 }
-div.cards:hover{
+.cards:hover{
 box-shadow: 7px 7px 7px 1px lightblue;
 
 }
