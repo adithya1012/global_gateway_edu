@@ -5,6 +5,7 @@ import "../styles/Recommendation.css";
 import "../styles/univRecommendation.css";
 import Univ from "../components/univ";
 import Axios from "axios";
+import serverConfig from '../config';
 function Recommendation() {
   const {
     register,
@@ -26,10 +27,14 @@ function Recommendation() {
     tutionfee: "Tution Fee",
   };
   const onSubmit = async (data) => {
-    let result = await Axios.post("http://localhost:8000/university", {
+    let result = await Axios.post(`${serverConfig.backend_url}/university`, {
       data: data,
     });
-    const dataArray = Object.values(result.data);
+    console.log("RESULT IS GENERATED");
+    console.log(result); 
+    // const dataArray = Object.values(result.data);
+    let dataArray = Object.values(result.data);
+    dataArray = dataArray.sort((a, b) => a.rank - b.rank);
     dataArray.unshift(item);
     setHeading("");
     setHPadding("2vw");

@@ -2,6 +2,7 @@ import React, { Component,useRef,useState } from "react";
 // import lorImage from "../images/lor.png"
 import "../styles/lorService.css";
 import Axios from "axios"
+import serverConfig from "../config"
 
 const LorService = () => {
     const [name, setName]=useState('');
@@ -9,7 +10,7 @@ const LorService = () => {
     const [mobilenumber,setMobilenumber]=useState('');
     
         const handleClick = () => {
-            Axios.post("http://localhost:8000/add_userlor_appointment", {
+            Axios.post(`${serverConfig.backend_url}/add_userlor_appointment`, {
               name:name,
               email:email,
               mobilenumber:mobilenumber,

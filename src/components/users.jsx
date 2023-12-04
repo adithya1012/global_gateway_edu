@@ -1,11 +1,12 @@
 import { useState } from "react";
 import Axios from "axios";
+import serverConfig from "../config"
 
 function Users() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const handleClick = (user) => {
-    let result = Axios.post("http://localhost:8000/add_user", {
+    let result = Axios.post(`${serverConfig.backend_url}/add_user`, {
       name: name,
       email: email,
     });

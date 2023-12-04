@@ -2,6 +2,7 @@ import React, { Component,useRef, useState } from "react";
 import "../styles/login.css"
 import Axios from "axios";
 import { useNavigate } from 'react-router-dom';
+import serverConfig from "../config"
 
 // const wrapper = document.querySelector('.wrapper');
 // const loginlink = document.querySelector(".login-link");
@@ -48,7 +49,8 @@ const LoginBody = () => {
     }
 
     const signinHandle = () => {
-      Axios.post("http://localhost:8000/add_user_detail", postData,{
+      // console.log(`${serverConfig.backend_url}/add_user_detail`);
+      Axios.post(`${serverConfig.backend_url}/add_user_detail`, postData,{
       withCredentials : true, //without this we are not able to set the cookies for jwt token
     }
       )
@@ -58,6 +60,7 @@ const LoginBody = () => {
           setName("");
           setEmail("");
           setPwd("");
+          // window.localStorage.setItem('jwt', response.my_token);
           navigate('/');
         })
         .catch((error) => {
@@ -96,7 +99,7 @@ const LoginBody = () => {
       e.preventDefault();
       try {
         // Assuming you have a server endpoint for updating the profile
-        const response = await Axios.post('http://localhost:8000/Login_user', {
+        const response = await Axios.post(`${serverConfig.backend_url}/Login_user`, {
           // name: name,
           email: email,
           password: pwd,

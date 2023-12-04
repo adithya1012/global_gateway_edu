@@ -2,6 +2,7 @@ import React, { Component,useRef, useState } from "react";
 import greImage from "../images/GRE.png"
 import "../styles/greService.css";
 import Axios from "axios"
+import serverConfig from "../config"
 
 
 const GreService = () => {
@@ -10,7 +11,7 @@ const [email,setEmail]=useState('');
 const [mobilenumber,setMobilenumber]=useState('');
 
     const handleClick = () => {
-        Axios.post("http://localhost:8000/add_user_appointment", {
+        Axios.post(`${serverConfig.backend_url}/add_user_appointment`, {
           name:name,
           email:email,
           mobilenumber:mobilenumber,

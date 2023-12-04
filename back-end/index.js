@@ -3,10 +3,15 @@ const mongoose = require("mongoose");
 const Router = require("./routes");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
+const path = require("path");
+const serverConfig = require("../src/config")
 
 const app = express();
-app.use(express.json());
+app.use(express.json()); 
 app.use(cookieParser());
+// app.use(express.static(path.join(__dirname, "../src/")));
+// console.log(path.join(__dirname, "../src/"));
+
 //Database
 
 const database = (module.exports = () => {
@@ -35,14 +40,17 @@ const database = (module.exports = () => {
 database();
 // app.use(cors());
 const corsOptions = {
-  origin: "http://localhost:3000", // Replace this port with the frontend port when we place in Heroku platform.
+  // origin: "http://localhost:3000", // Replace this port with the frontend port when we place in Heroku platform.
+  origin: `${serverConfig.frontend_url}`,
   credentials: true, // this is required to store the cookies. Cross-Origin Resource Sharing for node.
 };
 
 app.use(cors(corsOptions));
 app.use(Router);
 const PORT = process.env.PORT || 8000;
+console.log("+++++++PORT NUMBER+++++");
+console.log(PORT);
 app.listen(PORT, () => {
   console.log("server is running");
 });
-module.exports = app;
+module.exports = app; 

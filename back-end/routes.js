@@ -3,6 +3,7 @@ const userModel = require("./models");
 const univModel = require("./universityModel");
 const userModel_signup = require("./models_signup");
 const userModel_scheduleappointment = require("./models_scheduleappointment");
+const path = require("path");
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 // const cors = require('cors');
@@ -13,7 +14,10 @@ const bcrypt= require('bcrypt');
 // const multer = require('multer');
 // const path = require('path');
 // const fs = require('fs');
-
+console.log(__dirname);
+const path_val = path.join(__dirname, "../src/index.js");
+console.log(path_val);
+console.log("$$$$$$$$$$$$$$$$$");
 const app = express();
 
 const handleErrors = (err) => {
@@ -134,6 +138,7 @@ app.post("/add_userresume_appointment", async (request, response) => {
   }
 });
 app.post("/university", async (request, response) => {
+  console.log("THE UNIVERSITY REC CALL");
   const university = request.body.data;
   const query = {
     degree: university.degree,
@@ -152,11 +157,33 @@ app.post("/university", async (request, response) => {
   }
 });
 
+app.get("/university", (request, response) => {
+  const path_val = path.join(__dirname, "../src/index.js");
+  console.log(path_val);
+  console.log(__dirname);
+  console.log("blhblhblhblh");
+  // console.log(ls);
+  console.log("HELLOOOOO");
+  response.send("HELLOOOOO");
+});
+
+// app.get("/*", function(req, res) {
+//   res.sendFile(
+//     path.join(__dirname, "../src/index.html"),
+//     function(err) {
+//       if (err) {
+//         console.log(err);
+//         res.status(500).send(err);
+//       }
+//     }
+//   )
+// });
+
 app.post("/add_user_detail", async (req, res) => {
   const { name, email, password } = req.body;
   console.log(name);
   console.log(email);
-  console.log(password);
+  console.log(password); 
   try {
     // removing the password hasing from here as we are doing in middlewear.
     
@@ -170,7 +197,7 @@ app.post("/add_user_detail", async (req, res) => {
     // .status(200)
     // .json({ message: "Logged in successfully 😊 👌" });
     // console.log(token);
-    
+    console.log("SENDING 201 RESPONSE");
     res.status(201).json(user);
     
   } catch (err) {
