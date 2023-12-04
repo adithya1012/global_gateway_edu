@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import "../styles/Resume.css";
 import Axios from "axios"
+import serverConfig from "../config"
 
 const Resume=()=>{
 const [name, setName]=useState('');
@@ -8,7 +9,7 @@ const [email,setEmail]=useState('');
 const [mobilenumber,setMobilenumber]=useState('');
 
 const handleClick = () => {
-    Axios.post("http://localhost:8000/add_userresume_appointment", {
+    Axios.post(`${serverConfig.backend_url}/add_userresume_appointment`, {
       name:name,
       email:email,
       mobilenumber:mobilenumber,

@@ -31,17 +31,16 @@ const App = () => {
       <Router>
         <Routes>
           <Route path="/" element={<HomeBody />} />
-          <Route path="/universityList" element={<PrivateRoute element={<UniversityListBody />} path="/universityList" />} />
+          <Route path="/universityList" element={<UniversityListBody /> } />
           <Route path="/login" element={<LoginBody />} />
           <Route path="/greService" element={<PrivateRoute element={<GreService />} path="/greService" />} />
-          {/* Other routes */}
-          <Route path="/events" element={<Events />} />
+          <Route path="/events" element={<PrivateRoute element={<Events />} path="/events" />} />
           <Route path="/Alumni" element={<Alumni />} />
-          <Route path="/Finance" element={<Finance />} />
-          <Route path="/recom" element={<Recommendation />} />
-          <Route path="/SOP" element={<SOP />} />
-          <Route path="/lorService" element={<LorService />} />
-          <Route path="/Resume" element={<Resume />} />
+          <Route path="/Finance" element={<PrivateRoute element={<Finance />} path="/Finance" />} />
+          <Route path="/recom" element={<PrivateRoute element={<Recommendation />} path="/recom" />} />
+          <Route path="/SOP" element={<PrivateRoute element={<SOP />} path="/SOP" />} />
+          <Route path="/lorService" element={<PrivateRoute element={<LorService />} path="/lorService" />} />
+          <Route path="/Resume" element={<PrivateRoute element={<Resume />} path="/Resume" />} />
         </Routes>
       </Router>
       <Footer />

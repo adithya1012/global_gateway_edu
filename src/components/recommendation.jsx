@@ -5,6 +5,7 @@ import "../styles/Recommendation.css";
 import "../styles/univRecommendation.css";
 import Univ from "../components/univ";
 import Axios from "axios";
+import serverConfig from '../config';
 function Recommendation() {
   const {
     register,
@@ -26,12 +27,11 @@ function Recommendation() {
     tutionfee: "Tution Fee",
   };
   const onSubmit = async (data) => {
-    console.log("SUBMITTING THE REQUEST");
-    let result = await Axios.post("https://gge-backend-a0b13257508d.herokuapp.com/university", {
+    let result = await Axios.post(`${serverConfig.backend_url}/university`, {
       data: data,
     });
     console.log("RESULT IS GENERATED");
-    console.log(result);
+    console.log(result); 
     const dataArray = Object.values(result.data);
     dataArray.unshift(item);
     setHeading("");

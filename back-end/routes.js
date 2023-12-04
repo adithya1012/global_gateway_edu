@@ -183,7 +183,7 @@ app.post("/add_user_detail", async (req, res) => {
   const { name, email, password } = req.body;
   console.log(name);
   console.log(email);
-  console.log(password);
+  console.log(password); 
   try {
     // removing the password hasing from here as we are doing in middlewear.
     
@@ -197,7 +197,7 @@ app.post("/add_user_detail", async (req, res) => {
     // .status(200)
     // .json({ message: "Logged in successfully 😊 👌" });
     // console.log(token);
-    
+    console.log("SENDING 201 RESPONSE");
     res.status(201).json(user);
     
   } catch (err) {

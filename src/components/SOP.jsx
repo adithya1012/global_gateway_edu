@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "../styles/sop.css";
 import Axios from "axios"
+import serverConfig from "../config"
 
 const SOP=()=>{
 const [name, setName]=useState('');
@@ -9,7 +10,7 @@ const [email,setEmail]=useState('');
 const [mobilenumber,setMobilenumber]=useState('');
 
 const handleClick = () => {
-    Axios.post("http://localhost:8000/add_usersop_appointment", {
+    Axios.post(`${serverConfig.backend_url}/add_usersop_appointment`, {
       name:name,
       email:email,
       mobilenumber:mobilenumber,
