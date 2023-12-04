@@ -1,3 +1,4 @@
+
 const express = require("express");
 const userModel = require("./models");
 const univModel = require("./universityModel");
@@ -8,28 +9,67 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config();
 // const cors = require('cors');
 const bcrypt= require('bcrypt');
-// const requireAuth = require("./authMiddleware");
+// const send_message=require("./send_message.mjs")
 
+// const { run_send_message } = require('./send_message.mjs');
+// run_send_message();
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+// import fetch from "../node-fetch"
+// const requireAuth = require("./authMiddleware");
+ 
 // const saltRounds =10;
 // const multer = require('multer');
 // const path = require('path');
 // const fs = require('fs');
-console.log(__dirname);
-const path_val = path.join(__dirname, "../src/index.js");
-console.log(path_val);
-console.log("$$$$$$$$$$$$$$$$$");
+ 
+
+ 
 const app = express();
 
+const SERVICE_PLAN_ID = '59b5892751a147a387c39c528155c16f';
+const API_TOKEN = 'acfadde5dd8e4f7795841420af3db4bf';
+const SINCH_NUMBER = '+12068489628';
+// const TO_NUMBER = '+12604587401';
+ 
+
+ 
+// sending message
+async function run_send_message(mobilenumber) {
+  try{
+  const resp = await fetch(
+    'https://us.sms.api.sinch.com/xms/v1/' + SERVICE_PLAN_ID + '/batches',
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + API_TOKEN
+      },
+      body: JSON.stringify({
+        from: SINCH_NUMBER,
+        to: [mobilenumber],
+        body: 'Hello, Your appointment with GGE experts is confirmed for December 7, 2023, at 11:00 AM. Join the meeting using the provided URL https://meet.google.com/gyz-ewdv-rpa'
+      })
+    }
+  );
+  const data = await resp.json();
+  console.log(data);
+  console.log();
+} catch (error) {
+  // response.status(500).send(error);
+  console.error("Error while sending a message")
+  console.log(error);
+}
+}
 const handleErrors = (err) => {
   console.log(err.message, err.code);
   let errors = { email: '', password: '' };
-
+ 
   // duplicate email error
   if (err.code === 11000) {
     const message = 'The email is already registered';
     return message;
   }
-
+ 
   // validation errors
   console.log(err.message);
   if (err.message.includes('User_data1 validation failed')) {
@@ -43,7 +83,7 @@ const handleErrors = (err) => {
   .join(', ');
   return message;
 }
-
+ 
 // create json web token
 const maxAge = 3 * 24 * 60 * 60;
 const createToken = (id) => {
@@ -55,7 +95,7 @@ const createToken = (id) => {
   console.log(token);
   return token;
 };
-
+ 
 app.post("/add_user", async (request, response) => {
   const user = new userModel(request.body);
   try {
@@ -71,10 +111,11 @@ app.post("/add_user_appointment", async (request, response) => {
   console.log(name);
   console.log(email);
   console.log(mobilenumber);
-
+ 
   try {
     const user = new userModel_scheduleappointment({ name, email, mobilenumber});
     await user.save();
+    run_send_message(mobilenumber)
     response.send(user);
     console.log(user);
   } catch (error) {
@@ -82,17 +123,18 @@ app.post("/add_user_appointment", async (request, response) => {
     response.status(500).send(error);
   }
 });
-
+ 
 app.post("/add_usersop_appointment", async (request, response) => {
   // const user = new userModel_scheduleappointment(request.body);
   const { name, email, mobilenumber } = request.body;
   console.log(name);
   console.log(email);
   console.log(mobilenumber);
-
+ 
   try {
     const user = new userModel_scheduleappointment({ name, email, mobilenumber});
     await user.save();
+    run_send_message(mobilenumber)
     response.send(user);
     console.log(user);
   } catch (error) {
@@ -100,17 +142,18 @@ app.post("/add_usersop_appointment", async (request, response) => {
     response.status(500).send(error);
   }
 });
-
+ 
 app.post("/add_userlor_appointment", async (request, response) => {
   // const user = new userModel_scheduleappointment(request.body);
   const { name, email, mobilenumber } = request.body;
   console.log(name);
   console.log(email);
   console.log(mobilenumber);
-
+ 
   try {
     const user = new userModel_scheduleappointment({ name, email, mobilenumber});
     await user.save();
+    run_send_message(mobilenumber)
     response.send(user);
     console.log(user);
   } catch (error) {
@@ -118,7 +161,7 @@ app.post("/add_userlor_appointment", async (request, response) => {
     response.status(500).send(error);
   }
 });
-
+ 
 app.post("/add_userresume_appointment", async (request, response) => {
   // const user = new userModel_scheduleappointment(request.body);
   console.log(request.body)
@@ -126,10 +169,11 @@ app.post("/add_userresume_appointment", async (request, response) => {
   console.log(name);
   console.log(email);
   console.log(mobilenumber);
-
+ 
   try {
     const user = new userModel_scheduleappointment({ name, email, mobilenumber});
     await user.save();
+    run_send_message(mobilenumber);
     response.send(user);
     console.log(user);
   } catch (error) {
@@ -156,7 +200,7 @@ app.post("/university", async (request, response) => {
     response.status(500).send(error);
   }
 });
-
+ 
 app.get("/university", (request, response) => {
   const path_val = path.join(__dirname, "../src/index.js");
   console.log(path_val);
@@ -166,7 +210,7 @@ app.get("/university", (request, response) => {
   console.log("HELLOOOOO");
   response.send("HELLOOOOO");
 });
-
+ 
 // app.get("/*", function(req, res) {
 //   res.sendFile(
 //     path.join(__dirname, "../src/index.html"),
@@ -178,12 +222,12 @@ app.get("/university", (request, response) => {
 //     }
 //   )
 // });
-
+ 
 app.post("/add_user_detail", async (req, res) => {
   const { name, email, password } = req.body;
   console.log(name);
   console.log(email);
-  console.log(password); 
+  console.log(password);
   try {
     // removing the password hasing from here as we are doing in middlewear.
     
@@ -197,7 +241,7 @@ app.post("/add_user_detail", async (req, res) => {
     // .status(200)
     // .json({ message: "Logged in successfully 😊 👌" });
     // console.log(token);
-    console.log("SENDING 201 RESPONSE");
+    
     res.status(201).json(user);
     
   } catch (err) {
@@ -206,7 +250,7 @@ app.post("/add_user_detail", async (req, res) => {
     res.status(400).json({ errors });
   }
 });
-
+ 
 app.post("/Login_user", (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
@@ -231,5 +275,5 @@ app.post("/Login_user", (req, res) => {
       }
     })
   });
-
+ 
 module.exports = app;
