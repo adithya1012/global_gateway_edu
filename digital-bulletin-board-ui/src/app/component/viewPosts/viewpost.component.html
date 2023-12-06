@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>View Posts</title>
+  <style>
+    /* Add the styles directly in the HTML file */
+    body, h2 {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Style each post container */
+    .post-container {
+      margin-bottom: 20px;
+      padding: 15px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    /* Style the header of each post */
+    .post-container h3 {
+      color: #333;
+    }
+
+    /* Style the body text of each post */
+    .post-container p {
+      color: #555;
+    }
+
+    /* Style the attachments section */
+    .post-container ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .post-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    /* Style the messages section */
+    .post-container ul li {
+      color: #777;
+    }
+
+    /* Provide a border around the entire content for better separation */
+    .border {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .creation-time {
+      color: #777;
+      font-size: 0.8em;
+    }
+
+    .comment-creation-time {
+      color: #888;
+      font-size: 0.8em;
+    }
+  </style>
+</head>
+<body>
+<h2 style="text-align: center; font-family: 'Helvetica Neue, sans-serif';">PURDUE FORT WAYNE BULLETIN BOARD</h2>
+<div class="border container" style="font-family: 'Helvetica Neue, sans-serif';">
+  <!--        <div class="shadow p-3 mb-5 bg-white rounded">-->
+  <ul>
+    <li *ngFor="let post of posts" class="post-container">
+      <p class="creation-time">Posted on {{ post.createdTime | date: 'medium' }} by
+        <span *ngIf="Array.isArray(post.user)">
+                 <span *ngFor="let user of post.user">{{ user.firstName }} {{ user.lastName }}</span>
+              </span>
+        <span *ngIf="!Array.isArray(post.user)">
+               {{ post.user.firstName }} {{ post.user.lastName }}
+              </span></p>
+      <h3>{{ post.header }}</h3>
+      <p>{{ post.body }}</p>
+      <!--<p>Attachments:</p>-->
+      <ul>
+        <li *ngFor="let attachment of post.attachments">
+          <img [src]="attachment.url" alt="Attachment Image" />
+        </li>
+      </ul>
+      <p>Comments:</p>
+      <ul>
+        <li *ngFor="let message of post.messages">
+          {{ message.msg }}
+          <p class="comment-creation-time">Commented on: {{ message.updatedMessageTime | date: 'medium' }} by
+            <span *ngIf="Array.isArray(message.user)">
+                       <span *ngFor="let user of message.user">{{ user.firstName }} {{ user.lastName }}</span>
+                    </span>
+            <span *ngIf="!Array.isArray(message.user)">
+                        {{ message.user.firstName }} {{ message.user.lastName }}
+                      </span>
+          </p>
+        </li>
+      </ul>
+      <form (ngSubmit)="addComment(post)" style="margin-top: 10px;">
+        <div class="form-group">
+          <label for="comment">Add a Comment:</label>
+          <input type="text" id="comment" name="comment" [(ngModel)]="newComment" required>
+        </div>
+        <div class="form-group">
+          <label for="userId">Your User ID:</label>
+          <input type="number" id="userId" name="userId" [(ngModel)]="newUserId" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Comment</button>
+      </form>
+    <br>
+      <button (click)="editPost(post.postId)">Edit Post</button>
+  </ul>
+</div>
+</body>
+</html>
+
+
+

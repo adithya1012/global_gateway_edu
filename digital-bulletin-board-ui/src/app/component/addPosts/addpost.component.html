@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add a Post</title>
+</head>
+<body>
+<div class="container" style="font-family: 'Helvetica Neue, sans-serif';">
+  <div class="shadow p-3 mb-5 bg-white rounded">
+    <h2 style="text-align: center; font-family: 'Helvetica Neue, sans-serif';">Add Post</h2>
+    <form enctype="multipart/form-data" (ngSubmit)="addPost()">
+      <div class="form-group">
+        <label for="userId">User ID:</label><br>
+        <input type="number" id="userId" name="userId" [(ngModel)]="post.userId" required>
+      </div>
+      <div class="form-group">
+        <label for="header">Post Header:</label><br>
+        <input type="text" id="header" name="header" [(ngModel)]="post.header" required>
+      </div>
+      <div class="form-group">
+        <label for="body">Post Body:</label><br>
+        <textarea id="body" name="body" [(ngModel)]="post.body" required></textarea>
+      </div>
+      <div class="form-group">
+        <h3>Attachments:</h3>
+        <div *ngFor="let attachment of post.attachments; let i = index">
+          <label for="attachment{{i}}">Attachment:</label>
+          <input type="file" id="attachment{{i}}" name="attachment{{i}}" (change)="handleAttachmentChange($event, i)" required>
+          <br>
+        </div>
+        <button type="button" class="btn btn-primary" (click)="addAttachment()">Add Attachment</button>
+      </div>
+
+<!--      <div class="form-group">-->
+<!--        <h3>Messages:</h3>-->
+<!--        <div *ngFor="let message of post.messages; let i = index">-->
+<!--          <label for="message{{i}}">Message:</label>-->
+<!--          <input type="text" id="message{{i}}" name="message{{i}}" [(ngModel)]="message.msg" required>-->
+<!--          <br>-->
+<!--        </div>-->
+<!--        <button type="button" class="btn btn-primary" (click)="addMessage()">Add Message</button>-->
+<!--        <br>-->
+<!--      </div>-->
+      <br>
+      <button type="submit" class="btn btn-primary">Add Post</button>
+    </form>
+  </div>
+</div>
+
+
+</body>
+</html>

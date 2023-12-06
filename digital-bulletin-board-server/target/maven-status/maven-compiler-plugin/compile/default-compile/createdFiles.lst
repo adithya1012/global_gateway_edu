@@ -1,0 +1,13 @@
+com\purdue\digitalbulletinboardserver\controller\MessageController.class
+com\purdue\digitalbulletinboardserver\SecurityConfig.class
+com\purdue\digitalbulletinboardserver\model\User.class
+com\purdue\digitalbulletinboardserver\model\Attachment.class
+com\purdue\digitalbulletinboardserver\model\Message.class
+com\purdue\digitalbulletinboardserver\DigitalBulletinBoardServerApplication.class
+com\purdue\digitalbulletinboardserver\controller\PostController.class
+com\purdue\digitalbulletinboardserver\controller\LoginController.class
+com\purdue\digitalbulletinboardserver\controller\AttachmentController.class
+com\purdue\digitalbulletinboardserver\model\Post.class
+com\purdue\digitalbulletinboardserver\WebMvcConfig.class
+com\purdue\digitalbulletinboardserver\controller\UserController.class
+com\purdue\digitalbulletinboardserver\dao\DigitalBulletinBoardDao.class

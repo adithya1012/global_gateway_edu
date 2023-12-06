@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> EDITING PAGE OF BULLETIN BOARD</title>
+</head>
+<body>
+<div class="container">
+  <h2>Edit Post</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="userId">User ID:</label><br>
+<!--      <input type="number" id="userId" name="userId" [(ngModel)]="updatedPost.userId" required readonly>-->
+      <input type="number" id="userId" name="userId" [(ngModel)]="updatedPost.userId" required >
+    </div>
+
+    <div class="form-group">
+      <label for="header">Header:</label>
+      <input type="text" id="header" name="header" [(ngModel)]="updatedPost.header" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="body">Body:</label>
+      <textarea id="body" name="body" [(ngModel)]="updatedPost.body" class="form-control" rows="4" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Update Post</button>
+    <button type="button" class="btn btn-danger" (click)="deletePost()">Delete Post</button>
+  </form>
+</div>
+</body>
+</html>
+
+
+
+
